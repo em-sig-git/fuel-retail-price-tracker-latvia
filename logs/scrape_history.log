@@ -88,3 +88,12 @@
 2026-04-08 16:21:30,601 [INFO] Latvijas Nafta: 4 rows
 2026-04-08 16:21:30,634 [INFO] Saved 250 rows to /home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/data/fuel_prices_latvia.csv
 2026-04-08 16:21:30,634 [INFO] Scrape session finished. New rows: 25
+2026-04-09 05:38:41,194 [INFO] Scrape session started at 2026-04-09T08:38:41+03:00
+2026-04-09 05:38:42,075 [INFO] Circle K: 5 rows
+2026-04-09 05:38:44,806 [INFO] Neste: 4 rows
+2026-04-09 05:38:46,556 [INFO] Virši: 5 rows
+2026-04-09 05:38:49,424 [INFO] Viada: 7 rows
+2026-04-09 05:38:50,289 [INFO] KOOL: 0 rows
+2026-04-09 05:38:52,009 [INFO] Latvijas Nafta: 4 rows
+2026-04-09 05:38:52,024 [INFO] Saved 275 rows to /home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/data/fuel_prices_latvia.csv
+2026-04-09 05:38:52,024 [INFO] Scrape session finished. New rows: 25
