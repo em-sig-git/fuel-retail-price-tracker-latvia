@@ -52,7 +52,7 @@ def now_riga() -> datetime:
 
 
 def timestamp_now_iso() -> str:
-    return now_riga().replace(microsecond=0).isoformat()
+    return now_riga().replace(second=0, microsecond=0).isoformat(timespec="minutes")
 
 
 def extract_first_decimal(text: str) -> Optional[float]:
