@@ -26,7 +26,7 @@ class CircleKScraper(BaseBrandScraper):
         "98miles+": "E98",
         "Dmiles": "DD",
         "Dmiles+": "DD+",
-        "Autogāze": "Autogāze",
+        "Autogāze": "LPG",
     }
 
     def scrape(self, timestamp: str) -> Iterable[FuelRecord]:
@@ -289,7 +289,7 @@ class LatvijasNaftaScraper(BaseBrandScraper):
         "98 E": "E98",
         "DD Eiro": "DD",
         "DDL**": "DD+",
-        "Auto gāze": "Autogāze",
+        "Auto gāze": "LPG",
     }
 
     def scrape(self, timestamp: str) -> Iterable[FuelRecord]:
