@@ -29,7 +29,7 @@ class CircleKScraper(BaseBrandScraper):
         "Autogāze": "Autogāze",
     }
 
-    def scrape(self, timestamp: str, scraped_at: str) -> Iterable[FuelRecord]:
+    def scrape(self, timestamp: str) -> Iterable[FuelRecord]:
         html = fetch_html(self.source_url, session=self.session)
         soup = soupify(html)
         records: List[FuelRecord] = []
@@ -56,7 +56,6 @@ class CircleKScraper(BaseBrandScraper):
                     dus_address=address,
                     source_url=self.source_url,
                     note="",
-                    scraped_at=scraped_at,
                 )
             )
         return records
@@ -72,7 +71,7 @@ class NesteScraper(BaseBrandScraper):
         "Neste Pro Diesel": "DD+",
     }
 
-    def scrape(self, timestamp: str, scraped_at: str) -> Iterable[FuelRecord]:
+    def scrape(self, timestamp: str) -> Iterable[FuelRecord]:
         html = fetch_html(self.source_url, session=self.session)
         soup = soupify(html)
         records: List[FuelRecord] = []
@@ -98,7 +97,6 @@ class NesteScraper(BaseBrandScraper):
                     dus_address=normalize_address(cells[2]),
                     source_url=self.source_url,
                     note="",
-                    scraped_at=scraped_at,
                 )
             )
         return records
@@ -115,7 +113,7 @@ class VirsiScraper(BaseBrandScraper):
         "LPG": "LPG",
     }
 
-    def scrape(self, timestamp: str, scraped_at: str) -> Iterable[FuelRecord]:
+    def scrape(self, timestamp: str) -> Iterable[FuelRecord]:
         html = fetch_html(self.source_url, session=self.session)
         soup = soupify(html)
         records: List[FuelRecord] = []
@@ -143,7 +141,6 @@ class VirsiScraper(BaseBrandScraper):
                     dus_address=address,
                     source_url=self.source_url,
                     note="",
-                    scraped_at=scraped_at,
                 )
             )
         return records
@@ -162,7 +159,7 @@ class ViadaScraper(BaseBrandScraper):
         "GAZE.png": "LPG",
     }
 
-    def scrape(self, timestamp: str, scraped_at: str) -> Iterable[FuelRecord]:
+    def scrape(self, timestamp: str) -> Iterable[FuelRecord]:
         html = fetch_html(self.source_url, session=self.session)
         soup = soupify(html)
         records: List[FuelRecord] = []
@@ -194,7 +191,6 @@ class ViadaScraper(BaseBrandScraper):
                     dus_address=address,
                     source_url=self.source_url,
                     note="Multiple DUS may share one price row",
-                    scraped_at=scraped_at,
                 )
             )
         return records
@@ -218,7 +214,7 @@ class KoolScraper(BaseBrandScraper):
         left = float(left_match.group(1)) if left_match else -1.0
         return top, left
 
-    def scrape(self, timestamp: str, scraped_at: str) -> Iterable[FuelRecord]:
+    def scrape(self, timestamp: str) -> Iterable[FuelRecord]:
         html = fetch_html(self.source_url, session=self.session)
         soup = BeautifulSoup(html, "lxml")
 
@@ -296,7 +292,7 @@ class LatvijasNaftaScraper(BaseBrandScraper):
         "Auto gāze": "Autogāze",
     }
 
-    def scrape(self, timestamp: str, scraped_at: str) -> Iterable[FuelRecord]:
+    def scrape(self, timestamp: str) -> Iterable[FuelRecord]:
         html = fetch_html(self.source_url, session=self.session)
         soup = soupify(html)
         records: List[FuelRecord] = []
