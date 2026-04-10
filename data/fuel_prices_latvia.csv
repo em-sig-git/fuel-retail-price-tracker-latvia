@@ -1,4 +1,18 @@
 ﻿timestamp;country;brand;fuel_code;fuel_name_raw;price_eur_l;dus_address;source_url;note
+2026-04-10T13:16+03:00;LV;Circle K;DD;Dmiles;2.144;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
+2026-04-10T13:16+03:00;LV;Circle K;DD+;Dmiles+;2.274;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
+2026-04-10T13:16+03:00;LV;Circle K;E95;95miles;1.854;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
+2026-04-10T13:16+03:00;LV;Circle K;E98;98miles+;1.924;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
+2026-04-10T13:16+03:00;LV;Circle K;LPG;Autogāze;1.085;Autogāzes cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
+2026-04-10T13:16+03:00;LV;Neste;DD;Neste Futura D;2.127;Visās stacijās Rīgā;https://www.neste.lv/lv/content/degvielas-cenas;
+2026-04-10T13:16+03:00;LV;Neste;DD+;Neste Pro Diesel;2.257;Visās stacijās Rīgā;https://www.neste.lv/lv/content/degvielas-cenas;
+2026-04-10T13:16+03:00;LV;Neste;E95;Neste Futura 95;1.837;Visās stacijās Rīgā;https://www.neste.lv/lv/content/degvielas-cenas;
+2026-04-10T13:16+03:00;LV;Neste;E98;Neste Futura 98;1.907;Visās stacijās Rīgā;https://www.neste.lv/lv/content/degvielas-cenas;
+2026-04-10T13:16+03:00;LV;Virši;CNG;CNG;1.774;Visā Viršu tīklā;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
+2026-04-10T13:16+03:00;LV;Virši;DD;DD;2.147;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
+2026-04-10T13:16+03:00;LV;Virši;E95;95E;1.854;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
+2026-04-10T13:16+03:00;LV;Virši;E98;98E;1.907;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
+2026-04-10T13:16+03:00;LV;Virši;LPG;LPG;1.085;Visā Viršu tīklā;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
 2026-04-10T12:24+03:00;LV;Circle K;Autogāze;Autogāze;1.085;Autogāzes cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-10T12:24+03:00;LV;Circle K;DD;Dmiles;2.144;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-10T12:24+03:00;LV;Circle K;DD+;Dmiles+;2.274;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
