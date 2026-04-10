@@ -18,7 +18,6 @@ COLUMN_ORDER = [
     "dus_address",
     "source_url",
     "note",
-    "scraped_at",
 ]
 
 
