@@ -198,7 +198,7 @@ class ViadaScraper(BaseBrandScraper):
 
 class KoolScraper(BaseBrandScraper):
     brand = "KOOL"
-    source_url = "https://www.kool.lv/piedavajumi/"
+    source_url = "https://www.kool.lv/degviela/"
     fuel_map = {
         "95E": "E95",
         "98*": "E98",
