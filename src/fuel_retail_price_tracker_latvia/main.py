@@ -17,7 +17,6 @@ def run() -> int:
     setup_logging()
 
     timestamp = timestamp_now_iso()
-    scraped_at = timestamp
     logging.info("Scrape session started at %s", timestamp)
 
     all_rows = []
@@ -26,7 +25,7 @@ def run() -> int:
     for scraper_cls in LATVIA_SCRAPERS:
         scraper = scraper_cls(session)
         try:
-            rows = [record.to_dict() for record in scraper.scrape(timestamp=timestamp, scraped_at=scraped_at)]
+            rows = [record.to_dict() for record in scraper.scrape(timestamp=timestamp)]
             logging.info("%s: %s rows", scraper.brand, len(rows))
             all_rows.extend(rows)
         except Exception as exc:
