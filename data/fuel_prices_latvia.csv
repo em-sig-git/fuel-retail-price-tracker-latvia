@@ -1,4 +1,18 @@
 ﻿timestamp;country;brand;fuel_code;fuel_name_raw;price_eur_l;dus_address;source_url;note
+2026-04-12T17:29+03:00;LV;Circle K;DD;Dmiles;2.134;Brīvības gatve 265, Dzirciema iela 40, Gunāra Astras iela 10, Lubānas iela 76A;https://www.circlek.lv/degviela-miles/degvielas-cenas;
+2026-04-12T17:29+03:00;LV;Circle K;DD+;Dmiles+;2.264;Brīvības gatve 265, Dzirciema iela 40, Gunāra Astras iela 10, Lubānas iela 76A;https://www.circlek.lv/degviela-miles/degvielas-cenas;
+2026-04-12T17:29+03:00;LV;Circle K;E95;95miles;1.844;Brīvības gatve 265, Dzirciema iela 40, Gunāra Astras iela 10, Lubānas iela 76A;https://www.circlek.lv/degviela-miles/degvielas-cenas;
+2026-04-12T17:29+03:00;LV;Circle K;E98;98miles+;1.914;Brīvības gatve 265, Dzirciema iela 40, Gunāra Astras iela 10, Lubānas iela 76A;https://www.circlek.lv/degviela-miles/degvielas-cenas;
+2026-04-12T17:29+03:00;LV;Circle K;LPG;Autogāze;1.085;Autogāzes cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
+2026-04-12T17:29+03:00;LV;Neste;DD;Neste Futura D;2.117;Lubānas 64, Kuldīgas 1, A.Deglava 51a, Brīvības gatve 253, Latgales 427b, Latgales 448b, Jūrmalas gatve 46b, Kurzemes pr. 15a, Lucavsalas 1;https://www.neste.lv/lv/content/degvielas-cenas;
+2026-04-12T17:29+03:00;LV;Neste;DD+;Neste Pro Diesel;2.247;Lubānas 64, Kuldīgas 1, Latgales 427b, Jūrmalas gatve 46b, Kurzemes pr. 15a, Lucavsalas 1;https://www.neste.lv/lv/content/degvielas-cenas;
+2026-04-12T17:29+03:00;LV;Neste;E95;Neste Futura 95;1.827;Lubānas 64, Kuldīgas 1, A.Deglava 51a, Brīvības gatve 253, Latgales 427b, Jūrmalas gatve 46b, Kurzemes pr. 15a, Lucavsalas 1;https://www.neste.lv/lv/content/degvielas-cenas;
+2026-04-12T17:29+03:00;LV;Neste;E98;Neste Futura 98;1.897;Lubānas 64, Kuldīgas 1, A.Deglava 51a, Brīvības gatve 253, Latgales 427b, Jūrmalas gatve 46b, Kurzemes pr. 15a, Lucavsalas 1;https://www.neste.lv/lv/content/degvielas-cenas;
+2026-04-12T17:29+03:00;LV;Virši;CNG;CNG;1.774;Visā Viršu tīklā;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
+2026-04-12T17:29+03:00;LV;Virši;DD;DD;2.147;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
+2026-04-12T17:29+03:00;LV;Virši;E95;95E;1.854;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
+2026-04-12T17:29+03:00;LV;Virši;E98;98E;1.907;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
+2026-04-12T17:29+03:00;LV;Virši;LPG;LPG;1.085;Visā Viršu tīklā;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
 2026-04-12T14:52+03:00;LV;Circle K;DD;Dmiles;2.134;Brīvības gatve 265, Dzirciema iela 40, Gunāra Astras iela 10, Lubānas iela 76A;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-12T14:52+03:00;LV;Circle K;DD+;Dmiles+;2.264;Brīvības gatve 265, Dzirciema iela 40, Gunāra Astras iela 10, Lubānas iela 76A;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-12T14:52+03:00;LV;Circle K;E95;95miles;1.844;Brīvības gatve 265, Dzirciema iela 40, Gunāra Astras iela 10, Lubānas iela 76A;https://www.circlek.lv/degviela-miles/degvielas-cenas;
