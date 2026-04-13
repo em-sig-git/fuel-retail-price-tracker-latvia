@@ -1,4 +1,18 @@
-timestamp;country;brand;fuel_code;fuel_name_raw;price_eur_l;dus_address;source_url;note
+﻿timestamp;country;brand;fuel_code;fuel_name_raw;price_eur_l;dus_address;source_url;note
+2026-04-13T06:58+03:00;LV;Circle K;DD;Dmiles;2.134;Brīvības gatve 265, Dzirciema iela 40, Gunāra Astras iela 10, Lubānas iela 76A;https://www.circlek.lv/degviela-miles/degvielas-cenas;
+2026-04-13T06:58+03:00;LV;Circle K;DD+;Dmiles+;2.264;Brīvības gatve 265, Dzirciema iela 40, Gunāra Astras iela 10, Lubānas iela 76A;https://www.circlek.lv/degviela-miles/degvielas-cenas;
+2026-04-13T06:58+03:00;LV;Circle K;E95;95miles;1.844;Brīvības gatve 265, Dzirciema iela 40, Gunāra Astras iela 10, Lubānas iela 76A;https://www.circlek.lv/degviela-miles/degvielas-cenas;
+2026-04-13T06:58+03:00;LV;Circle K;E98;98miles+;1.914;Brīvības gatve 265, Dzirciema iela 40, Gunāra Astras iela 10, Lubānas iela 76A;https://www.circlek.lv/degviela-miles/degvielas-cenas;
+2026-04-13T06:58+03:00;LV;Circle K;LPG;Autogāze;1.085;Autogāzes cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
+2026-04-13T06:58+03:00;LV;Neste;DD;Neste Futura D;2.117;Lubānas 64, Kuldīgas 1, A.Deglava 51a, Brīvības gatve 253, Latgales 427b, Latgales 448b, Jūrmalas gatve 46b, Kurzemes pr. 15a, Lucavsalas 1;https://www.neste.lv/lv/content/degvielas-cenas;
+2026-04-13T06:58+03:00;LV;Neste;DD+;Neste Pro Diesel;2.247;Lubānas 64, Kuldīgas 1, Latgales 427b, Jūrmalas gatve 46b, Kurzemes pr. 15a, Lucavsalas 1;https://www.neste.lv/lv/content/degvielas-cenas;
+2026-04-13T06:58+03:00;LV;Neste;E95;Neste Futura 95;1.827;Lubānas 64, Kuldīgas 1, A.Deglava 51a, Brīvības gatve 253, Latgales 427b, Jūrmalas gatve 46b, Kurzemes pr. 15a, Lucavsalas 1;https://www.neste.lv/lv/content/degvielas-cenas;
+2026-04-13T06:58+03:00;LV;Neste;E98;Neste Futura 98;1.897;Lubānas 64, Kuldīgas 1, A.Deglava 51a, Brīvības gatve 253, Latgales 427b, Jūrmalas gatve 46b, Kurzemes pr. 15a, Lucavsalas 1;https://www.neste.lv/lv/content/degvielas-cenas;
+2026-04-13T06:58+03:00;LV;Virši;CNG;CNG;1.774;Visā Viršu tīklā;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
+2026-04-13T06:58+03:00;LV;Virši;DD;DD;2.147;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
+2026-04-13T06:58+03:00;LV;Virši;E95;95E;1.854;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
+2026-04-13T06:58+03:00;LV;Virši;E98;98E;1.907;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
+2026-04-13T06:58+03:00;LV;Virši;LPG;LPG;1.085;Visā Viršu tīklā;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
 2026-04-13T05:22+03:00;LV;Circle K;DD;Dmiles;2.134;Brīvības gatve 265, Dzirciema iela 40, Gunāra Astras iela 10, Lubānas iela 76A;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-13T05:22+03:00;LV;Circle K;DD+;Dmiles+;2.264;Brīvības gatve 265, Dzirciema iela 40, Gunāra Astras iela 10, Lubānas iela 76A;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-13T05:22+03:00;LV;Circle K;E95;95miles;1.844;Brīvības gatve 265, Dzirciema iela 40, Gunāra Astras iela 10, Lubānas iela 76A;https://www.circlek.lv/degviela-miles/degvielas-cenas;
@@ -153,11 +167,11 @@ timestamp;country;brand;fuel_code;fuel_name_raw;price_eur_l;dus_address;source_u
 2026-04-10T13:16+03:00;LV;Virši;E95;95E;1.854;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
 2026-04-10T13:16+03:00;LV;Virši;E98;98E;1.907;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
 2026-04-10T13:16+03:00;LV;Virši;LPG;LPG;1.085;Visā Viršu tīklā;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
-2026-04-10T12:24+03:00;LV;Circle K;LPG;Autogāze;1.085;Autogāzes cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-10T12:24+03:00;LV;Circle K;DD;Dmiles;2.144;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-10T12:24+03:00;LV;Circle K;DD+;Dmiles+;2.274;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-10T12:24+03:00;LV;Circle K;E95;95miles;1.854;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-10T12:24+03:00;LV;Circle K;E98;98miles+;1.924;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
+2026-04-10T12:24+03:00;LV;Circle K;LPG;Autogāze;1.085;Autogāzes cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-10T12:24+03:00;LV;Neste;DD;Neste Futura D;2.127;Visās stacijās Rīgā;https://www.neste.lv/lv/content/degvielas-cenas;
 2026-04-10T12:24+03:00;LV;Neste;DD+;Neste Pro Diesel;2.257;Visās stacijās Rīgā;https://www.neste.lv/lv/content/degvielas-cenas;
 2026-04-10T12:24+03:00;LV;Neste;E95;Neste Futura 95;1.837;Visās stacijās Rīgā;https://www.neste.lv/lv/content/degvielas-cenas;
@@ -167,15 +181,15 @@ timestamp;country;brand;fuel_code;fuel_name_raw;price_eur_l;dus_address;source_u
 2026-04-10T12:24+03:00;LV;Virši;E95;95E;1.854;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
 2026-04-10T12:24+03:00;LV;Virši;E98;98E;1.907;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
 2026-04-10T12:24+03:00;LV;Virši;LPG;LPG;1.085;Visā Viršu tīklā;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
-2026-04-10T10:33:30+03:00;LV;Circle K;LPG;Autogāze;1.085;Autogāzes cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-10T10:33:30+03:00;LV;Circle K;DD;Dmiles;2.144;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-10T10:33:30+03:00;LV;Circle K;DD+;Dmiles+;2.274;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-10T10:33:30+03:00;LV;Circle K;E95;95miles;1.854;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-10T10:33:30+03:00;LV;Circle K;E98;98miles+;1.924;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
-2026-04-10T10:33:30+03:00;LV;Latvijas Nafta;LPG;Auto gāze;1.075;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
+2026-04-10T10:33:30+03:00;LV;Circle K;LPG;Autogāze;1.085;Autogāzes cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-10T10:33:30+03:00;LV;Latvijas Nafta;DD;DD Eiro;2.097;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-10T10:33:30+03:00;LV;Latvijas Nafta;E95;95 E;1.797;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-10T10:33:30+03:00;LV;Latvijas Nafta;E98;98 E;1.877;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
+2026-04-10T10:33:30+03:00;LV;Latvijas Nafta;LPG;Auto gāze;1.075;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-10T10:33:30+03:00;LV;Neste;DD;Neste Futura D;2.127;Visās stacijās Rīgā;https://www.neste.lv/lv/content/degvielas-cenas;
 2026-04-10T10:33:30+03:00;LV;Neste;DD+;Neste Pro Diesel;2.257;Visās stacijās Rīgā;https://www.neste.lv/lv/content/degvielas-cenas;
 2026-04-10T10:33:30+03:00;LV;Neste;E95;Neste Futura 95;1.837;Visās stacijās Rīgā;https://www.neste.lv/lv/content/degvielas-cenas;
@@ -185,15 +199,15 @@ timestamp;country;brand;fuel_code;fuel_name_raw;price_eur_l;dus_address;source_u
 2026-04-10T10:33:30+03:00;LV;Virši;E95;95E;1.854;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
 2026-04-10T10:33:30+03:00;LV;Virši;E98;98E;1.907;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
 2026-04-10T10:33:30+03:00;LV;Virši;LPG;LPG;1.085;Visā Viršu tīklā;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
-2026-04-09T19:50:47+03:00;LV;Circle K;LPG;Autogāze;1.085;Autogāzes cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-09T19:50:47+03:00;LV;Circle K;DD;Dmiles;2.144;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-09T19:50:47+03:00;LV;Circle K;DD+;Dmiles+;2.274;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-09T19:50:47+03:00;LV;Circle K;E95;95miles;1.854;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-09T19:50:47+03:00;LV;Circle K;E98;98miles+;1.924;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
-2026-04-09T19:50:47+03:00;LV;Latvijas Nafta;LPG;Auto gāze;1.075;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
+2026-04-09T19:50:47+03:00;LV;Circle K;LPG;Autogāze;1.085;Autogāzes cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-09T19:50:47+03:00;LV;Latvijas Nafta;DD;DD Eiro;2.117;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-09T19:50:47+03:00;LV;Latvijas Nafta;E95;95 E;1.827;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-09T19:50:47+03:00;LV;Latvijas Nafta;E98;98 E;1.897;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
+2026-04-09T19:50:47+03:00;LV;Latvijas Nafta;LPG;Auto gāze;1.075;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-09T19:50:47+03:00;LV;Neste;DD;Neste Futura D;2.127;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
 2026-04-09T19:50:47+03:00;LV;Neste;DD+;Neste Pro Diesel;2.257;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
 2026-04-09T19:50:47+03:00;LV;Neste;E95;Neste Futura 95;1.837;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
@@ -210,15 +224,15 @@ timestamp;country;brand;fuel_code;fuel_name_raw;price_eur_l;dus_address;source_u
 2026-04-09T19:50:47+03:00;LV;Virši;E95;95E;1.854;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
 2026-04-09T19:50:47+03:00;LV;Virši;E98;98E;1.907;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
 2026-04-09T19:50:47+03:00;LV;Virši;LPG;LPG;1.085;Visā Viršu tīklā;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
-2026-04-09T13:41:02+03:00;LV;Circle K;LPG;Autogāze;1.085;Autogāzes cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-09T13:41:02+03:00;LV;Circle K;DD;Dmiles;2.184;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-09T13:41:02+03:00;LV;Circle K;DD+;Dmiles+;2.314;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-09T13:41:02+03:00;LV;Circle K;E95;95miles;1.854;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-09T13:41:02+03:00;LV;Circle K;E98;98miles+;1.924;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
-2026-04-09T13:41:02+03:00;LV;Latvijas Nafta;LPG;Auto gāze;1.075;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
+2026-04-09T13:41:02+03:00;LV;Circle K;LPG;Autogāze;1.085;Autogāzes cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-09T13:41:02+03:00;LV;Latvijas Nafta;DD;DD Eiro;2.117;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-09T13:41:02+03:00;LV;Latvijas Nafta;E95;95 E;1.827;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-09T13:41:02+03:00;LV;Latvijas Nafta;E98;98 E;1.897;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
+2026-04-09T13:41:02+03:00;LV;Latvijas Nafta;LPG;Auto gāze;1.075;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-09T13:41:02+03:00;LV;Neste;DD;Neste Futura D;2.167;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
 2026-04-09T13:41:02+03:00;LV;Neste;DD+;Neste Pro Diesel;2.297;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
 2026-04-09T13:41:02+03:00;LV;Neste;E95;Neste Futura 95;1.837;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
@@ -235,15 +249,15 @@ timestamp;country;brand;fuel_code;fuel_name_raw;price_eur_l;dus_address;source_u
 2026-04-09T13:41:02+03:00;LV;Virši;E95;95E;1.854;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
 2026-04-09T13:41:02+03:00;LV;Virši;E98;98E;1.907;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
 2026-04-09T13:41:02+03:00;LV;Virši;LPG;LPG;1.085;Visā Viršu tīklā;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
-2026-04-09T08:38:41+03:00;LV;Circle K;LPG;Autogāze;1.085;Autogāzes cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-09T08:38:41+03:00;LV;Circle K;DD;Dmiles;2.144;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-09T08:38:41+03:00;LV;Circle K;DD+;Dmiles+;2.274;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-09T08:38:41+03:00;LV;Circle K;E95;95miles;1.854;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-09T08:38:41+03:00;LV;Circle K;E98;98miles+;1.924;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
-2026-04-09T08:38:41+03:00;LV;Latvijas Nafta;LPG;Auto gāze;1.075;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
+2026-04-09T08:38:41+03:00;LV;Circle K;LPG;Autogāze;1.085;Autogāzes cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-09T08:38:41+03:00;LV;Latvijas Nafta;DD;DD Eiro;2.137;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-09T08:38:41+03:00;LV;Latvijas Nafta;E95;95 E;1.847;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-09T08:38:41+03:00;LV;Latvijas Nafta;E98;98 E;1.917;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
+2026-04-09T08:38:41+03:00;LV;Latvijas Nafta;LPG;Auto gāze;1.075;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-09T08:38:41+03:00;LV;Neste;DD;Neste Futura D;2.127;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
 2026-04-09T08:38:41+03:00;LV;Neste;DD+;Neste Pro Diesel;2.257;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
 2026-04-09T08:38:41+03:00;LV;Neste;E95;Neste Futura 95;1.837;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
@@ -260,15 +274,15 @@ timestamp;country;brand;fuel_code;fuel_name_raw;price_eur_l;dus_address;source_u
 2026-04-09T08:38:41+03:00;LV;Virši;E95;95E;1.854;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
 2026-04-09T08:38:41+03:00;LV;Virši;E98;98E;1.907;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
 2026-04-09T08:38:41+03:00;LV;Virši;LPG;LPG;1.085;Visā Viršu tīklā;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
-2026-04-08T19:21:20+03:00;LV;Circle K;LPG;Autogāze;1.085;Autogāzes cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T19:21:20+03:00;LV;Circle K;DD;Dmiles;2.144;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T19:21:20+03:00;LV;Circle K;DD+;Dmiles+;2.274;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T19:21:20+03:00;LV;Circle K;E95;95miles;1.854;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T19:21:20+03:00;LV;Circle K;E98;98miles+;1.924;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
-2026-04-08T19:21:20+03:00;LV;Latvijas Nafta;LPG;Auto gāze;1.075;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
+2026-04-08T19:21:20+03:00;LV;Circle K;LPG;Autogāze;1.085;Autogāzes cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T19:21:20+03:00;LV;Latvijas Nafta;DD;DD Eiro;2.137;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-08T19:21:20+03:00;LV;Latvijas Nafta;E95;95 E;1.847;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-08T19:21:20+03:00;LV;Latvijas Nafta;E98;98 E;1.917;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
+2026-04-08T19:21:20+03:00;LV;Latvijas Nafta;LPG;Auto gāze;1.075;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-08T19:21:20+03:00;LV;Neste;DD;Neste Futura D;2.127;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
 2026-04-08T19:21:20+03:00;LV;Neste;DD+;Neste Pro Diesel;2.257;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
 2026-04-08T19:21:20+03:00;LV;Neste;E95;Neste Futura 95;1.837;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
@@ -285,15 +299,15 @@ timestamp;country;brand;fuel_code;fuel_name_raw;price_eur_l;dus_address;source_u
 2026-04-08T19:21:20+03:00;LV;Virši;E95;95E;1.854;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
 2026-04-08T19:21:20+03:00;LV;Virši;E98;98E;1.907;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
 2026-04-08T19:21:20+03:00;LV;Virši;LPG;LPG;1.085;Visā Viršu tīklā;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
-2026-04-08T17:16:16+03:00;LV;Circle K;LPG;Autogāze;1.085;Autogāzes cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T17:16:16+03:00;LV;Circle K;DD;Dmiles;2.144;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T17:16:16+03:00;LV;Circle K;DD+;Dmiles+;2.274;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T17:16:16+03:00;LV;Circle K;E95;95miles;1.854;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T17:16:16+03:00;LV;Circle K;E98;98miles+;1.924;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
-2026-04-08T17:16:16+03:00;LV;Latvijas Nafta;LPG;Auto gāze;1.075;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
+2026-04-08T17:16:16+03:00;LV;Circle K;LPG;Autogāze;1.085;Autogāzes cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T17:16:16+03:00;LV;Latvijas Nafta;DD;DD Eiro;2.137;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-08T17:16:16+03:00;LV;Latvijas Nafta;E95;95 E;1.847;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-08T17:16:16+03:00;LV;Latvijas Nafta;E98;98 E;1.917;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
+2026-04-08T17:16:16+03:00;LV;Latvijas Nafta;LPG;Auto gāze;1.075;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-08T17:16:16+03:00;LV;Neste;DD;Neste Futura D;2.127;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
 2026-04-08T17:16:16+03:00;LV;Neste;DD+;Neste Pro Diesel;2.257;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
 2026-04-08T17:16:16+03:00;LV;Neste;E95;Neste Futura 95;1.837;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
@@ -310,15 +324,15 @@ timestamp;country;brand;fuel_code;fuel_name_raw;price_eur_l;dus_address;source_u
 2026-04-08T17:16:16+03:00;LV;Virši;E95;95E;1.854;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
 2026-04-08T17:16:16+03:00;LV;Virši;E98;98E;1.907;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
 2026-04-08T17:16:16+03:00;LV;Virši;LPG;LPG;1.085;Visā Viršu tīklā;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
-2026-04-08T16:01:10+03:00;LV;Circle K;LPG;Autogāze;1.085;Autogāzes cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T16:01:10+03:00;LV;Circle K;DD;Dmiles;2.144;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T16:01:10+03:00;LV;Circle K;DD+;Dmiles+;2.274;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T16:01:10+03:00;LV;Circle K;E95;95miles;1.854;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T16:01:10+03:00;LV;Circle K;E98;98miles+;1.924;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
-2026-04-08T16:01:10+03:00;LV;Latvijas Nafta;LPG;Auto gāze;1.075;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
+2026-04-08T16:01:10+03:00;LV;Circle K;LPG;Autogāze;1.085;Autogāzes cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T16:01:10+03:00;LV;Latvijas Nafta;DD;DD Eiro;2.137;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-08T16:01:10+03:00;LV;Latvijas Nafta;E95;95 E;1.847;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-08T16:01:10+03:00;LV;Latvijas Nafta;E98;98 E;1.917;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
+2026-04-08T16:01:10+03:00;LV;Latvijas Nafta;LPG;Auto gāze;1.075;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-08T16:01:10+03:00;LV;Neste;DD;Neste Futura D;2.127;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
 2026-04-08T16:01:10+03:00;LV;Neste;DD+;Neste Pro Diesel;2.257;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
 2026-04-08T16:01:10+03:00;LV;Neste;E95;Neste Futura 95;1.837;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
@@ -335,15 +349,15 @@ timestamp;country;brand;fuel_code;fuel_name_raw;price_eur_l;dus_address;source_u
 2026-04-08T16:01:10+03:00;LV;Virši;E95;95E;1.854;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
 2026-04-08T16:01:10+03:00;LV;Virši;E98;98E;1.907;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
 2026-04-08T16:01:10+03:00;LV;Virši;LPG;LPG;1.085;Visā Viršu tīklā;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
-2026-04-08T14:17:32+03:00;LV;Circle K;LPG;Autogāze;1.085;Autogāzes cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T14:17:32+03:00;LV;Circle K;DD;Dmiles;2.144;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T14:17:32+03:00;LV;Circle K;DD+;Dmiles+;2.274;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T14:17:32+03:00;LV;Circle K;E95;95miles;1.854;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T14:17:32+03:00;LV;Circle K;E98;98miles+;1.924;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
-2026-04-08T14:17:32+03:00;LV;Latvijas Nafta;LPG;Auto gāze;1.075;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
+2026-04-08T14:17:32+03:00;LV;Circle K;LPG;Autogāze;1.085;Autogāzes cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T14:17:32+03:00;LV;Latvijas Nafta;DD;DD Eiro;2.137;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-08T14:17:32+03:00;LV;Latvijas Nafta;E95;95 E;1.847;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-08T14:17:32+03:00;LV;Latvijas Nafta;E98;98 E;1.917;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
+2026-04-08T14:17:32+03:00;LV;Latvijas Nafta;LPG;Auto gāze;1.075;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-08T14:17:32+03:00;LV;Neste;DD;Neste Futura D;2.127;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
 2026-04-08T14:17:32+03:00;LV;Neste;DD+;Neste Pro Diesel;2.257;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
 2026-04-08T14:17:32+03:00;LV;Neste;E95;Neste Futura 95;1.837;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
@@ -360,15 +374,15 @@ timestamp;country;brand;fuel_code;fuel_name_raw;price_eur_l;dus_address;source_u
 2026-04-08T14:17:32+03:00;LV;Virši;E95;95E;1.854;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
 2026-04-08T14:17:32+03:00;LV;Virši;E98;98E;1.907;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
 2026-04-08T14:17:32+03:00;LV;Virši;LPG;LPG;1.085;Visā Viršu tīklā;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
-2026-04-08T14:09:09+03:00;LV;Circle K;LPG;Autogāze;1.085;Autogāzes cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T14:09:09+03:00;LV;Circle K;DD;Dmiles;2.144;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T14:09:09+03:00;LV;Circle K;DD+;Dmiles+;2.274;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T14:09:09+03:00;LV;Circle K;E95;95miles;1.854;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T14:09:09+03:00;LV;Circle K;E98;98miles+;1.924;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
-2026-04-08T14:09:09+03:00;LV;Latvijas Nafta;LPG;Auto gāze;1.075;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
+2026-04-08T14:09:09+03:00;LV;Circle K;LPG;Autogāze;1.085;Autogāzes cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T14:09:09+03:00;LV;Latvijas Nafta;DD;DD Eiro;2.137;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-08T14:09:09+03:00;LV;Latvijas Nafta;E95;95 E;1.847;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-08T14:09:09+03:00;LV;Latvijas Nafta;E98;98 E;1.917;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
+2026-04-08T14:09:09+03:00;LV;Latvijas Nafta;LPG;Auto gāze;1.075;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-08T14:09:09+03:00;LV;Neste;DD;Neste Futura D;2.127;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
 2026-04-08T14:09:09+03:00;LV;Neste;DD+;Neste Pro Diesel;2.257;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
 2026-04-08T14:09:09+03:00;LV;Neste;E95;Neste Futura 95;1.837;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
@@ -385,15 +399,15 @@ timestamp;country;brand;fuel_code;fuel_name_raw;price_eur_l;dus_address;source_u
 2026-04-08T14:09:09+03:00;LV;Virši;E95;95E;1.854;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
 2026-04-08T14:09:09+03:00;LV;Virši;E98;98E;1.907;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
 2026-04-08T14:09:09+03:00;LV;Virši;LPG;LPG;1.085;Visā Viršu tīklā;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
-2026-04-08T12:28:58+03:00;LV;Circle K;LPG;Autogāze;1.085;Autogāzes cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T12:28:58+03:00;LV;Circle K;DD;Dmiles;2.144;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T12:28:58+03:00;LV;Circle K;DD+;Dmiles+;2.274;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T12:28:58+03:00;LV;Circle K;E95;95miles;1.854;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T12:28:58+03:00;LV;Circle K;E98;98miles+;1.924;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
-2026-04-08T12:28:58+03:00;LV;Latvijas Nafta;LPG;Auto gāze;1.075;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
+2026-04-08T12:28:58+03:00;LV;Circle K;LPG;Autogāze;1.085;Autogāzes cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T12:28:58+03:00;LV;Latvijas Nafta;DD;DD Eiro;2.137;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-08T12:28:58+03:00;LV;Latvijas Nafta;E95;95 E;1.847;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-08T12:28:58+03:00;LV;Latvijas Nafta;E98;98 E;1.917;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
+2026-04-08T12:28:58+03:00;LV;Latvijas Nafta;LPG;Auto gāze;1.075;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-08T12:28:58+03:00;LV;Neste;DD;Neste Futura D;2.127;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
 2026-04-08T12:28:58+03:00;LV;Neste;DD+;Neste Pro Diesel;2.257;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
 2026-04-08T12:28:58+03:00;LV;Neste;E95;Neste Futura 95;1.837;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
@@ -410,15 +424,15 @@ timestamp;country;brand;fuel_code;fuel_name_raw;price_eur_l;dus_address;source_u
 2026-04-08T12:28:58+03:00;LV;Virši;E95;95E;1.854;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
 2026-04-08T12:28:58+03:00;LV;Virši;E98;98E;1.907;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
 2026-04-08T12:28:58+03:00;LV;Virši;LPG;LPG;1.085;Visā Viršu tīklā;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
-2026-04-08T11:31:45+03:00;LV;Circle K;LPG;Autogāze;1.085;Autogāzes cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T11:31:45+03:00;LV;Circle K;DD;Dmiles;2.144;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T11:31:45+03:00;LV;Circle K;DD+;Dmiles+;2.274;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T11:31:45+03:00;LV;Circle K;E95;95miles;1.854;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T11:31:45+03:00;LV;Circle K;E98;98miles+;1.924;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
-2026-04-08T11:31:45+03:00;LV;Latvijas Nafta;LPG;Auto gāze;1.075;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
+2026-04-08T11:31:45+03:00;LV;Circle K;LPG;Autogāze;1.085;Autogāzes cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T11:31:45+03:00;LV;Latvijas Nafta;DD;DD Eiro;2.137;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-08T11:31:45+03:00;LV;Latvijas Nafta;E95;95 E;1.847;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-08T11:31:45+03:00;LV;Latvijas Nafta;E98;98 E;1.917;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
+2026-04-08T11:31:45+03:00;LV;Latvijas Nafta;LPG;Auto gāze;1.075;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-08T11:31:45+03:00;LV;Neste;DD;Neste Futura D;2.127;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
 2026-04-08T11:31:45+03:00;LV;Neste;DD+;Neste Pro Diesel;2.257;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
 2026-04-08T11:31:45+03:00;LV;Neste;E95;Neste Futura 95;1.837;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
@@ -435,15 +449,15 @@ timestamp;country;brand;fuel_code;fuel_name_raw;price_eur_l;dus_address;source_u
 2026-04-08T11:31:45+03:00;LV;Virši;E95;95E;1.854;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
 2026-04-08T11:31:45+03:00;LV;Virši;E98;98E;1.907;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
 2026-04-08T11:31:45+03:00;LV;Virši;LPG;LPG;1.085;Visā Viršu tīklā;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
-2026-04-08T10:06:29+03:00;LV;Circle K;LPG;Autogāze;1.085;Autogāzes cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T10:06:29+03:00;LV;Circle K;DD;Dmiles;2.144;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T10:06:29+03:00;LV;Circle K;DD+;Dmiles+;2.274;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T10:06:29+03:00;LV;Circle K;E95;95miles;1.854;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T10:06:29+03:00;LV;Circle K;E98;98miles+;1.924;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
-2026-04-08T10:06:29+03:00;LV;Latvijas Nafta;LPG;Auto gāze;1.075;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
+2026-04-08T10:06:29+03:00;LV;Circle K;LPG;Autogāze;1.085;Autogāzes cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T10:06:29+03:00;LV;Latvijas Nafta;DD;DD Eiro;2.137;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-08T10:06:29+03:00;LV;Latvijas Nafta;E95;95 E;1.847;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-08T10:06:29+03:00;LV;Latvijas Nafta;E98;98 E;1.917;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
+2026-04-08T10:06:29+03:00;LV;Latvijas Nafta;LPG;Auto gāze;1.075;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-08T10:06:29+03:00;LV;Neste;DD;Neste Futura D;2.127;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
 2026-04-08T10:06:29+03:00;LV;Neste;DD+;Neste Pro Diesel;2.257;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
 2026-04-08T10:06:29+03:00;LV;Neste;E95;Neste Futura 95;1.837;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
@@ -460,15 +474,15 @@ timestamp;country;brand;fuel_code;fuel_name_raw;price_eur_l;dus_address;source_u
 2026-04-08T10:06:29+03:00;LV;Virši;E95;95E;1.854;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
 2026-04-08T10:06:29+03:00;LV;Virši;E98;98E;1.907;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
 2026-04-08T10:06:29+03:00;LV;Virši;LPG;LPG;1.085;Visā Viršu tīklā;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
-2026-04-08T08:22:18+03:00;LV;Circle K;LPG;Autogāze;1.095;Autogāzes cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T08:22:18+03:00;LV;Circle K;DD;Dmiles;2.144;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T08:22:18+03:00;LV;Circle K;DD+;Dmiles+;2.274;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T08:22:18+03:00;LV;Circle K;E95;95miles;1.854;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T08:22:18+03:00;LV;Circle K;E98;98miles+;1.924;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
-2026-04-08T08:22:18+03:00;LV;Latvijas Nafta;LPG;Auto gāze;1.075;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
+2026-04-08T08:22:18+03:00;LV;Circle K;LPG;Autogāze;1.095;Autogāzes cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-08T08:22:18+03:00;LV;Latvijas Nafta;DD;DD Eiro;2.157;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-08T08:22:18+03:00;LV;Latvijas Nafta;E95;95 E;1.847;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-08T08:22:18+03:00;LV;Latvijas Nafta;E98;98 E;1.917;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
+2026-04-08T08:22:18+03:00;LV;Latvijas Nafta;LPG;Auto gāze;1.075;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-08T08:22:18+03:00;LV;Neste;DD;Neste Futura D;2.127;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
 2026-04-08T08:22:18+03:00;LV;Neste;DD+;Neste Pro Diesel;2.257;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
 2026-04-08T08:22:18+03:00;LV;Neste;E95;Neste Futura 95;1.837;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
@@ -485,15 +499,15 @@ timestamp;country;brand;fuel_code;fuel_name_raw;price_eur_l;dus_address;source_u
 2026-04-08T08:22:18+03:00;LV;Virši;E95;95E;1.854;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
 2026-04-08T08:22:18+03:00;LV;Virši;E98;98E;1.907;Brīvības gatve 297, RĪga, LV-1006;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
 2026-04-08T08:22:18+03:00;LV;Virši;LPG;LPG;1.085;Visā Viršu tīklā;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
-2026-04-07T23:54:46+03:00;LV;Circle K;LPG;Autogāze;1.095;Autogāzes cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-07T23:54:46+03:00;LV;Circle K;DD;Dmiles;2.144;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-07T23:54:46+03:00;LV;Circle K;DD+;Dmiles+;2.274;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-07T23:54:46+03:00;LV;Circle K;E95;95miles;1.854;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-07T23:54:46+03:00;LV;Circle K;E98;98miles+;1.924;Degvielas cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
-2026-04-07T23:54:46+03:00;LV;Latvijas Nafta;LPG;Auto gāze;1.075;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
+2026-04-07T23:54:46+03:00;LV;Circle K;LPG;Autogāze;1.095;Autogāzes cena visos DUS ir vienāda;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-07T23:54:46+03:00;LV;Latvijas Nafta;DD;DD Eiro;2.157;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-07T23:54:46+03:00;LV;Latvijas Nafta;E95;95 E;1.847;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-07T23:54:46+03:00;LV;Latvijas Nafta;E98;98 E;1.917;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
+2026-04-07T23:54:46+03:00;LV;Latvijas Nafta;LPG;Auto gāze;1.075;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
 2026-04-07T23:54:46+03:00;LV;Neste;DD;Neste Futura D;2.127;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
 2026-04-07T23:54:46+03:00;LV;Neste;DD+;Neste Pro Diesel;2.257;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
 2026-04-07T23:54:46+03:00;LV;Neste;E95;Neste Futura 95;1.837;Visās stacijās cenas vienādas;https://www.neste.lv/lv/content/degvielas-cenas;
