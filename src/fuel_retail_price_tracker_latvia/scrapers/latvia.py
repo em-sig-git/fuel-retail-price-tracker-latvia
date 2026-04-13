@@ -221,15 +221,19 @@ class KoolScraper(BaseBrandScraper):
         left = float(left_match.group(1)) if left_match else -1.0
         return top, left
 
-    def scrape(self, timestamp: str) -> Iterable[FuelRecord]:
+    def _fetch_rendered_html(self) -> str:
         from playwright.sync_api import sync_playwright
         with sync_playwright() as p:
-            browser = p.chromium.launch()
+            browser = p.chromium.launch(args=["--no-sandbox", "--disable-setuid-sandbox"])
             page = browser.new_page()
-            page.goto(self.source_url, wait_until="networkidle")
+            page.goto(self.source_url, wait_until="networkidle", timeout=60000)
             html = page.content()
             browser.close()
-        soup = BeautifulSoup(html, "lxml")
+        return html
+
+    def scrape(self, timestamp: str) -> Iterable[FuelRecord]:
+        html = self._fetch_rendered_html()
+        soup = soupify(html)
 
         text_widgets = []
         for widget in soup.select("div.rmwidget.widget-text-v3"):
@@ -259,15 +263,17 @@ class KoolScraper(BaseBrandScraper):
                 continue
             if widget is address_block:
                 continue
-            if re.search(r"\d+[\.,]\d+", text) or text in self.fuel_map:
+            if re.search(r"\d+[.,]\d+", text) or text.lower() in {k.lower() for k in self.fuel_map}:
                 row_id = 0 if widget["top"] < 280 else 1
                 row_groups[row_id].append(widget)
 
         records: List[FuelRecord] = []
+        fuel_map_lower = {k.lower(): v for k, v in self.fuel_map.items()}
+
         for row_id, row_address in enumerate(address_lines):
             widgets = row_groups.get(row_id, [])
-            labels = [w for w in widgets if w["text"] in self.fuel_map]
-            prices = [w for w in widgets if re.search(r"\d+[\.,]\d+", w["text"])]
+            labels = [w for w in widgets if w["text"].lower() in fuel_map_lower]
+            prices = [w for w in widgets if re.search(r"\d+[.,]\d+", w["text"])]
             if not labels or not prices:
                 continue
             prices_sorted = sorted(prices, key=lambda x: x["left"])
@@ -282,7 +288,7 @@ class KoolScraper(BaseBrandScraper):
                         timestamp=timestamp,
                         country=self.country,
                         brand=self.brand,
-                        fuel_code=self.fuel_map[raw_name],
+                        fuel_code=fuel_map_lower[raw_name.lower()],
                         fuel_name_raw=raw_name,
                         price_eur_l=price,
                         dus_address=row_address,
