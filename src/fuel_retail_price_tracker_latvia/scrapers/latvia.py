@@ -210,7 +210,7 @@ class KoolScraper(BaseBrandScraper):
         "95E": "E95",
         "98*": "E98",
         "DD": "DD",
-        "KOOL PREMIUM DIESEL**": "DD+",
+        "kool premium diesel**": "DD+",
     }
 
     @staticmethod
