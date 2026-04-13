@@ -2022,3 +2022,20 @@ Call log:
 2026-04-13 12:05:26,830 [INFO] Latvijas Nafta: 4 rows
 2026-04-13 12:05:26,847 [INFO] Saved 614 rows to /home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/data/fuel_prices_latvia.csv
 2026-04-13 12:05:26,847 [INFO] Scrape session finished. New rows: 25
+2026-04-13 12:37:03,405 [INFO] Scrape session started at 2026-04-13T15:37+03:00
+2026-04-13 12:37:04,051 [INFO] Circle K: 5 rows
+2026-04-13 12:37:05,242 [INFO] Neste: 4 rows
+2026-04-13 12:37:06,642 [INFO] Virši: 5 rows
+2026-04-13 12:37:09,216 [INFO] Viada: 7 rows
+2026-04-13 12:37:12,446 [ERROR] KOOL failed: name 'logging' is not defined
+Traceback (most recent call last):
+  File "/home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/src/fuel_retail_price_tracker_latvia/main.py", line 28, in run
+    rows = [record.to_dict() for record in scraper.scrape(timestamp=timestamp)]
+                                           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/src/fuel_retail_price_tracker_latvia/scrapers/latvia.py", line 240, in scrape
+    logging.info("KOOL: found %d widget-text-v3 elements in fetched HTML", widget_count)
+    ^^^^^^^
+NameError: name 'logging' is not defined. Did you forget to import 'logging'?
+2026-04-13 12:37:13,778 [INFO] Latvijas Nafta: 4 rows
+2026-04-13 12:37:13,809 [INFO] Saved 639 rows to /home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/data/fuel_prices_latvia.csv
+2026-04-13 12:37:13,809 [INFO] Scrape session finished. New rows: 25
