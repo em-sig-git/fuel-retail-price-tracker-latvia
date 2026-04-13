@@ -159,6 +159,13 @@ class ViadaScraper(BaseBrandScraper):
         "GAZE.png": "LPG",
     }
 
+    def __init__(self, session: requests.Session) -> None:
+        import requests as _req
+        viada_session = _req.Session()
+        viada_session.verify = False
+        super().__init__(viada_session)
+
+
     def scrape(self, timestamp: str) -> Iterable[FuelRecord]:
         html = fetch_html(self.source_url, session=self.session)
         soup = soupify(html)
