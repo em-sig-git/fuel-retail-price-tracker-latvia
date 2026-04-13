@@ -1867,3 +1867,54 @@ Traceback (most recent call last):
 NameError: name 'scraped_at' is not defined
 2026-04-13 06:25:47,456 [INFO] Saved 539 rows to /home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/data/fuel_prices_latvia.csv
 2026-04-13 06:25:47,456 [INFO] Scrape session finished. New rows: 14
+2026-04-13 07:56:04,432 [INFO] Scrape session started at 2026-04-13T10:56+03:00
+2026-04-13 07:56:05,081 [INFO] Circle K: 5 rows
+2026-04-13 07:56:06,384 [INFO] Neste: 4 rows
+2026-04-13 07:56:07,588 [INFO] Virši: 5 rows
+2026-04-13 07:56:10,201 [INFO] Viada: 7 rows
+2026-04-13 07:56:42,234 [ERROR] KOOL failed: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://www.kool.lv/degviela/", waiting until "networkidle"
+Traceback (most recent call last):
+  File "/home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/src/fuel_retail_price_tracker_latvia/main.py", line 28, in run
+    rows = [record.to_dict() for record in scraper.scrape(timestamp=timestamp)]
+                                           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/src/fuel_retail_price_tracker_latvia/scrapers/latvia.py", line 229, in scrape
+    page.goto(self.source_url, wait_until="networkidle")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/playwright/sync_api/_generated.py", line 9054, in goto
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.goto(
+        ^^^^^^^^^^^^^^^^^^^^
+            url=url, timeout=timeout, waitUntil=wait_until, referer=referer
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+    )
+    ^
+  File "/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/playwright/_impl/_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/playwright/_impl/_frame.py", line 153, in goto
+    await self._channel.send(
+        "goto", self._navigation_timeout, locals_to_params(locals())
+    )
+  File "/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://www.kool.lv/degviela/", waiting until "networkidle"
+
+2026-04-13 07:56:43,581 [INFO] Latvijas Nafta: 4 rows
+2026-04-13 07:56:43,598 [INFO] Saved 564 rows to /home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/data/fuel_prices_latvia.csv
+2026-04-13 07:56:43,598 [INFO] Scrape session finished. New rows: 25
