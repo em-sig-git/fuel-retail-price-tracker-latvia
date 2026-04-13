@@ -226,7 +226,9 @@ class KoolScraper(BaseBrandScraper):
         with sync_playwright() as p:
             browser = p.chromium.launch(args=["--no-sandbox", "--disable-setuid-sandbox"])
             page = browser.new_page()
-            page.goto(self.source_url, wait_until="networkidle", timeout=60000)
+            page.goto(self.source_url, wait_until="domcontentloaded", timeout=60000)
+            # Wait until at least one price widget is actually in the DOM
+            page.wait_for_selector("div.rmwidget.widget-text-v3", timeout=30000)
             html = page.content()
             browser.close()
         return html
@@ -234,6 +236,8 @@ class KoolScraper(BaseBrandScraper):
     def scrape(self, timestamp: str) -> Iterable[FuelRecord]:
         html = self._fetch_rendered_html()
         soup = soupify(html)
+        widget_count = len(soup.select("div.rmwidget.widget-text-v3"))
+        logging.info("KOOL: found %d widget-text-v3 elements in fetched HTML", widget_count)
 
         text_widgets = []
         for widget in soup.select("div.rmwidget.widget-text-v3"):
