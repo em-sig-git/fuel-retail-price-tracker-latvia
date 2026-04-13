@@ -2049,3 +2049,13 @@ NameError: name 'logging' is not defined. Did you forget to import 'logging'?
 2026-04-13 12:43:02,886 [INFO] Latvijas Nafta: 4 rows
 2026-04-13 12:43:02,903 [INFO] Saved 672 rows to /home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/data/fuel_prices_latvia.csv
 2026-04-13 12:43:02,903 [INFO] Scrape session finished. New rows: 33
+2026-04-13 16:45:25,125 [INFO] Scrape session started at 2026-04-13T19:45+03:00
+2026-04-13 16:45:25,994 [INFO] Circle K: 5 rows
+2026-04-13 16:45:27,728 [INFO] Neste: 4 rows
+2026-04-13 16:45:29,592 [INFO] Virši: 5 rows
+2026-04-13 16:45:32,657 [INFO] Viada: 7 rows
+2026-04-13 16:45:35,921 [INFO] KOOL: found 34 widget-text-v3 elements in fetched HTML
+2026-04-13 16:45:35,926 [INFO] KOOL: 8 rows
+2026-04-13 16:45:37,527 [INFO] Latvijas Nafta: 4 rows
+2026-04-13 16:45:37,559 [INFO] Saved 705 rows to /home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/data/fuel_prices_latvia.csv
+2026-04-13 16:45:37,559 [INFO] Scrape session finished. New rows: 33
