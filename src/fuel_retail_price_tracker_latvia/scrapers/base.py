@@ -17,5 +17,5 @@ class BaseBrandScraper(ABC):
         self.session = session
 
     @abstractmethod
-    def scrape(self, timestamp: str, scraped_at: str) -> Iterable[FuelRecord]:
+    def scrape(self, timestamp: str) -> Iterable[FuelRecord]:
         raise NotImplementedError
