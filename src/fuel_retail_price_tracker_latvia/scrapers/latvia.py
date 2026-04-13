@@ -282,7 +282,6 @@ class KoolScraper(BaseBrandScraper):
                         dus_address=row_address,
                         source_url=self.source_url,
                         note="Parsed from positioned page widgets",
-                        scraped_at=scraped_at,
                     )
                 )
         return records
@@ -339,7 +338,6 @@ class LatvijasNaftaScraper(BaseBrandScraper):
                             dus_address=address,
                             source_url=self.source_url,
                             note="Only rows with numeric values are recorded",
-                            scraped_at=scraped_at,
                         )
                     )
         return records
