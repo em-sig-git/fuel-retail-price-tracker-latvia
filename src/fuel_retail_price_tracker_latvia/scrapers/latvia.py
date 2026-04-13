@@ -1,11 +1,12 @@
 from __future__ import annotations
-
+ 
+import logging
 import re
 from collections import defaultdict
 from typing import Iterable, List
-
+ 
 from bs4 import BeautifulSoup
-
+ 
 from ..models import FuelRecord
 from ..utils import (
     clean_multiline_text,
@@ -16,8 +17,8 @@ from ..utils import (
     soupify,
 )
 from .base import BaseBrandScraper
-
-
+ 
+ 
 class CircleKScraper(BaseBrandScraper):
     brand = "Circle K"
     source_url = "https://www.circlek.lv/degviela-miles/degvielas-cenas"
@@ -28,7 +29,7 @@ class CircleKScraper(BaseBrandScraper):
         "Dmiles+": "DD+",
         "Autogāze": "LPG",
     }
-
+ 
     def scrape(self, timestamp: str) -> Iterable[FuelRecord]:
         html = fetch_html(self.source_url, session=self.session)
         soup = soupify(html)
@@ -59,8 +60,8 @@ class CircleKScraper(BaseBrandScraper):
                 )
             )
         return records
-
-
+ 
+ 
 class NesteScraper(BaseBrandScraper):
     brand = "Neste"
     source_url = "https://www.neste.lv/lv/content/degvielas-cenas"
@@ -70,7 +71,7 @@ class NesteScraper(BaseBrandScraper):
         "Neste Futura D": "DD",
         "Neste Pro Diesel": "DD+",
     }
-
+ 
     def scrape(self, timestamp: str) -> Iterable[FuelRecord]:
         html = fetch_html(self.source_url, session=self.session)
         soup = soupify(html)
@@ -100,8 +101,8 @@ class NesteScraper(BaseBrandScraper):
                 )
             )
         return records
-
-
+ 
+ 
 class VirsiScraper(BaseBrandScraper):
     brand = "Virši"
     source_url = "https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena"
@@ -112,7 +113,7 @@ class VirsiScraper(BaseBrandScraper):
         "CNG": "CNG",
         "LPG": "LPG",
     }
-
+ 
     def scrape(self, timestamp: str) -> Iterable[FuelRecord]:
         html = fetch_html(self.source_url, session=self.session)
         soup = soupify(html)
@@ -144,8 +145,8 @@ class VirsiScraper(BaseBrandScraper):
                 )
             )
         return records
-
-
+ 
+ 
 class ViadaScraper(BaseBrandScraper):
     brand = "Viada"
     source_url = "https://www.viada.lv/zemakas-degvielas-cenas/"
@@ -158,14 +159,14 @@ class ViadaScraper(BaseBrandScraper):
         "petrol_e85_new.png": "E85",
         "GAZE.png": "LPG",
     }
-
+ 
     def __init__(self, session: requests.Session) -> None:
         import requests as _req
         viada_session = _req.Session()
         viada_session.verify = False
         super().__init__(viada_session)
-
-
+ 
+ 
     def scrape(self, timestamp: str) -> Iterable[FuelRecord]:
         html = fetch_html(self.source_url, session=self.session)
         soup = soupify(html)
@@ -201,8 +202,8 @@ class ViadaScraper(BaseBrandScraper):
                 )
             )
         return records
-
-
+ 
+ 
 class KoolScraper(BaseBrandScraper):
     brand = "KOOL"
     source_url = "https://www.kool.lv/degviela/"
@@ -212,7 +213,7 @@ class KoolScraper(BaseBrandScraper):
         "DD": "DD",
         "kool premium diesel**": "DD+",
     }
-
+ 
     @staticmethod
     def _extract_top_left(style: str) -> tuple[float, float]:
         top_match = re.search(r"top:\s*([\d.]+)px", style or "")
@@ -220,7 +221,7 @@ class KoolScraper(BaseBrandScraper):
         top = float(top_match.group(1)) if top_match else -1.0
         left = float(left_match.group(1)) if left_match else -1.0
         return top, left
-
+ 
     def _fetch_rendered_html(self) -> str:
         from playwright.sync_api import sync_playwright
         with sync_playwright() as p:
@@ -232,13 +233,13 @@ class KoolScraper(BaseBrandScraper):
             html = page.content()
             browser.close()
         return html
-
+ 
     def scrape(self, timestamp: str) -> Iterable[FuelRecord]:
         html = self._fetch_rendered_html()
         soup = soupify(html)
         widget_count = len(soup.select("div.rmwidget.widget-text-v3"))
         logging.info("KOOL: found %d widget-text-v3 elements in fetched HTML", widget_count)
-
+ 
         text_widgets = []
         for widget in soup.select("div.rmwidget.widget-text-v3"):
             text = clean_multiline_text(widget.get_text("\n", strip=True))
@@ -246,20 +247,20 @@ class KoolScraper(BaseBrandScraper):
                 continue
             top, left = self._extract_top_left(widget.get("style", ""))
             text_widgets.append({"text": text, "top": top, "left": left})
-
+ 
         address_block = next((w for w in text_widgets if "Deglava iela 77" in w["text"]), None)
         if not address_block:
             return []
-
+ 
         address_lines = []
         for line in address_block["text"].splitlines():
             line = clean_text(line)
             if line.startswith("-"):
                 address_lines.append(normalize_address(line.lstrip("-")))
-
+ 
         if not address_lines:
             return []
-
+ 
         row_groups = defaultdict(list)
         for widget in text_widgets:
             text = widget["text"]
@@ -270,10 +271,10 @@ class KoolScraper(BaseBrandScraper):
             if re.search(r"\d+[.,]\d+", text) or text.lower() in {k.lower() for k in self.fuel_map}:
                 row_id = 0 if widget["top"] < 280 else 1
                 row_groups[row_id].append(widget)
-
+ 
         records: List[FuelRecord] = []
         fuel_map_lower = {k.lower(): v for k, v in self.fuel_map.items()}
-
+ 
         for row_id, row_address in enumerate(address_lines):
             widgets = row_groups.get(row_id, [])
             labels = [w for w in widgets if w["text"].lower() in fuel_map_lower]
@@ -301,8 +302,8 @@ class KoolScraper(BaseBrandScraper):
                     )
                 )
         return records
-
-
+ 
+ 
 class LatvijasNaftaScraper(BaseBrandScraper):
     brand = "Latvijas Nafta"
     source_url = "https://www.lnafta.lv/lv/start/dus-tikls"
@@ -313,12 +314,12 @@ class LatvijasNaftaScraper(BaseBrandScraper):
         "DDL**": "DD+",
         "Auto gāze": "LPG",
     }
-
+ 
     def scrape(self, timestamp: str) -> Iterable[FuelRecord]:
         html = fetch_html(self.source_url, session=self.session)
         soup = soupify(html)
         records: List[FuelRecord] = []
-
+ 
         for table in soup.select("table.dusRegion"):
             header_cells = [clean_text(th.get_text(" ", strip=True)) for th in table.select("tr:first-child th")]
             if not header_cells:
@@ -330,7 +331,7 @@ class LatvijasNaftaScraper(BaseBrandScraper):
             }
             if not fuel_indexes:
                 continue
-
+ 
             rows = table.select("tr")[1:]
             for row in rows:
                 cells = row.select("td")
@@ -357,8 +358,8 @@ class LatvijasNaftaScraper(BaseBrandScraper):
                         )
                     )
         return records
-
-
+ 
+ 
 LATVIA_SCRAPERS = [
     CircleKScraper,
     NesteScraper,
