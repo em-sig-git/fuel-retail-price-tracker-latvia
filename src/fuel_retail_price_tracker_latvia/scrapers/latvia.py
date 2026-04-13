@@ -222,7 +222,13 @@ class KoolScraper(BaseBrandScraper):
         return top, left
 
     def scrape(self, timestamp: str) -> Iterable[FuelRecord]:
-        html = fetch_html(self.source_url, session=self.session)
+        from playwright.sync_api import sync_playwright
+        with sync_playwright() as p:
+            browser = p.chromium.launch()
+            page = browser.new_page()
+            page.goto(self.source_url, wait_until="networkidle")
+            html = page.content()
+            browser.close()
         soup = BeautifulSoup(html, "lxml")
 
         text_widgets = []
