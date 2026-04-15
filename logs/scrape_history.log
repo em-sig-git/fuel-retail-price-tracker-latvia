@@ -2176,3 +2176,72 @@ Call log:
 2026-04-14 19:59:33,139 [INFO] Latvijas Nafta: 4 rows
 2026-04-14 19:59:33,158 [INFO] Saved 879 rows to /home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/data/fuel_prices_latvia.csv
 2026-04-14 19:59:33,158 [INFO] Scrape session finished. New rows: 33
+2026-04-15 10:44:19,966 [INFO] Scrape session started at 2026-04-15T13:44+03:00
+2026-04-15 10:44:20,737 [INFO] Circle K: 5 rows
+2026-04-15 10:44:22,024 [INFO] Neste: 4 rows
+2026-04-15 10:44:23,310 [INFO] Virši: 5 rows
+2026-04-15 10:44:26,044 [INFO] Viada: 7 rows
+2026-04-15 10:44:58,359 [ERROR] KOOL failed: Page.wait_for_selector: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("div.rmwidget.widget-text-v3") to be visible
+    - locator resolved to 3 elements. Proceeding with the first one: <div data-id="638db411fb876d00242f38f4" class="rmwidget widget-text-v3 fonts-pending">…</div>
+    - locator resolved to 32 elements. Proceeding with the first one: <div class="rmwidget widget-text-v3" data-id="638db411fb876d00242f38f4">…</div>
+    - locator resolved to 37 elements. Proceeding with the first one: <div class="rmwidget widget-text-v3" data-id="638db411fb876d00242f38f4">…</div>
+    - locator resolved to 50 elements. Proceeding with the first one: <div class="rmwidget widget-text-v3" data-id="638db411fb876d00242f38f4">…</div>
+    - locator resolved to 59 elements. Proceeding with the first one: <div class="rmwidget widget-text-v3" data-id="638db411fb876d00242f38f4">…</div>
+    - locator resolved to 124 elements. Proceeding with the first one: <div class="rmwidget widget-text-v3" data-id="5db3e26ed357b40d00d3dacf">…</div>
+    - locator resolved to 126 elements. Proceeding with the first one: <div class="rmwidget widget-text-v3" data-id="5db3e26ed357b40d00d3dacf">…</div>
+    52 × locator resolved to 144 elements. Proceeding with the first one: <div class="rmwidget widget-text-v3" data-id="5db3e26ed357b40d00d3dacf">…</div>
+Traceback (most recent call last):
+  File "/home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/src/fuel_retail_price_tracker_latvia/main.py", line 28, in run
+    rows = [record.to_dict() for record in scraper.scrape(timestamp=timestamp)]
+                                           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/src/fuel_retail_price_tracker_latvia/scrapers/latvia.py", line 238, in scrape
+    html = self._fetch_rendered_html()
+  File "/home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/src/fuel_retail_price_tracker_latvia/scrapers/latvia.py", line 232, in _fetch_rendered_html
+    page.wait_for_selector("div.rmwidget.widget-text-v3", timeout=30000)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/playwright/sync_api/_generated.py", line 8217, in wait_for_selector
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.wait_for_selector(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            selector=selector, timeout=timeout, state=state, strict=strict
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+    )
+    ^
+  File "/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/playwright/_impl/_page.py", line 419, in wait_for_selector
+    return await self._main_frame.wait_for_selector(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/playwright/_impl/_frame.py", line 369, in wait_for_selector
+    await self._channel.send(
+        "waitForSelector", self._timeout, locals_to_params(locals())
+    )
+  File "/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.wait_for_selector: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("div.rmwidget.widget-text-v3") to be visible
+    - locator resolved to 3 elements. Proceeding with the first one: <div data-id="638db411fb876d00242f38f4" class="rmwidget widget-text-v3 fonts-pending">…</div>
+    - locator resolved to 32 elements. Proceeding with the first one: <div class="rmwidget widget-text-v3" data-id="638db411fb876d00242f38f4">…</div>
+    - locator resolved to 37 elements. Proceeding with the first one: <div class="rmwidget widget-text-v3" data-id="638db411fb876d00242f38f4">…</div>
+    - locator resolved to 50 elements. Proceeding with the first one: <div class="rmwidget widget-text-v3" data-id="638db411fb876d00242f38f4">…</div>
+    - locator resolved to 59 elements. Proceeding with the first one: <div class="rmwidget widget-text-v3" data-id="638db411fb876d00242f38f4">…</div>
+    - locator resolved to 124 elements. Proceeding with the first one: <div class="rmwidget widget-text-v3" data-id="5db3e26ed357b40d00d3dacf">…</div>
+    - locator resolved to 126 elements. Proceeding with the first one: <div class="rmwidget widget-text-v3" data-id="5db3e26ed357b40d00d3dacf">…</div>
+    52 × locator resolved to 144 elements. Proceeding with the first one: <div class="rmwidget widget-text-v3" data-id="5db3e26ed357b40d00d3dacf">…</div>
+
+2026-04-15 10:44:59,943 [INFO] Latvijas Nafta: 4 rows
+2026-04-15 10:44:59,960 [INFO] Saved 904 rows to /home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/data/fuel_prices_latvia.csv
+2026-04-15 10:44:59,960 [INFO] Scrape session finished. New rows: 25
