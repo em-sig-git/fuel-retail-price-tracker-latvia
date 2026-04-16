@@ -222,23 +222,23 @@ class KoolScraper(BaseBrandScraper):
         left = float(left_match.group(1)) if left_match else -1.0
         return top, left
  
-def _fetch_rendered_html(self) -> str:
-    from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeout
-    with sync_playwright() as p:
-        browser = p.chromium.launch(args=["--no-sandbox", "--disable-setuid-sandbox"])
-        page = browser.new_page()
-        page.goto(self.source_url, wait_until="domcontentloaded", timeout=60000)
-        # Use state="attached" — avoids the fonts-pending visibility deadlock
-        page.wait_for_selector("div.rmwidget.widget-text-v3", state="attached", timeout=30000)
-        # Then wait for network idle to let the page builder finish populating widgets,
-        # but treat timeout as non-fatal — proceed with whatever DOM is available
-        try:
-            page.wait_for_load_state("networkidle", timeout=20000)
-        except PlaywrightTimeout:
-            logging.warning("KOOL: networkidle timeout, proceeding with partial DOM")
-        html = page.content()
-        browser.close()
-    return html
+    def _fetch_rendered_html(self) -> str:
+        from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeout
+        with sync_playwright() as p:
+            browser = p.chromium.launch(args=["--no-sandbox", "--disable-setuid-sandbox"])
+            page = browser.new_page()
+            page.goto(self.source_url, wait_until="domcontentloaded", timeout=60000)
+            # state="attached" avoids the fonts-pending visibility deadlock
+            page.wait_for_selector("div.rmwidget.widget-text-v3", state="attached", timeout=30000)
+            # Let the page builder finish populating widgets, but don't hard-fail
+            # if the page never reaches networkidle (e.g. analytics pings)
+            try:
+                page.wait_for_load_state("networkidle", timeout=20000)
+            except PlaywrightTimeout:
+                logging.warning("KOOL: networkidle timeout, proceeding with partial DOM")
+            html = page.content()
+            browser.close()
+        return html
  
     def scrape(self, timestamp: str) -> Iterable[FuelRecord]:
         html = self._fetch_rendered_html()
@@ -254,8 +254,12 @@ def _fetch_rendered_html(self) -> str:
             top, left = self._extract_top_left(widget.get("style", ""))
             text_widgets.append({"text": text, "top": top, "left": left})
  
-        address_block = next((w for w in text_widgets if "Deglava iela 77" in w["text"]), None)
-        if not address_block:
+        def _dash_line_count(w: dict) -> int:
+            return sum(1 for line in w["text"].splitlines() if clean_text(line).startswith("-"))
+
+        address_block = max(text_widgets, key=_dash_line_count, default=None)
+        if not address_block or _dash_line_count(address_block) < 2:
+            logging.warning("KOOL: could not identify address block (no widget with >=2 dash-prefixed lines)")
             return []
  
         address_lines = []
