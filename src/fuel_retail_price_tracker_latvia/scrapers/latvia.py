@@ -222,17 +222,23 @@ class KoolScraper(BaseBrandScraper):
         left = float(left_match.group(1)) if left_match else -1.0
         return top, left
  
-    def _fetch_rendered_html(self) -> str:
-        from playwright.sync_api import sync_playwright
-        with sync_playwright() as p:
-            browser = p.chromium.launch(args=["--no-sandbox", "--disable-setuid-sandbox"])
-            page = browser.new_page()
-            page.goto(self.source_url, wait_until="domcontentloaded", timeout=60000)
-            # Wait until at least one price widget is actually in the DOM
-            page.wait_for_selector("div.rmwidget.widget-text-v3", timeout=30000)
-            html = page.content()
-            browser.close()
-        return html
+def _fetch_rendered_html(self) -> str:
+    from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeout
+    with sync_playwright() as p:
+        browser = p.chromium.launch(args=["--no-sandbox", "--disable-setuid-sandbox"])
+        page = browser.new_page()
+        page.goto(self.source_url, wait_until="domcontentloaded", timeout=60000)
+        # Use state="attached" — avoids the fonts-pending visibility deadlock
+        page.wait_for_selector("div.rmwidget.widget-text-v3", state="attached", timeout=30000)
+        # Then wait for network idle to let the page builder finish populating widgets,
+        # but treat timeout as non-fatal — proceed with whatever DOM is available
+        try:
+            page.wait_for_load_state("networkidle", timeout=20000)
+        except PlaywrightTimeout:
+            logging.warning("KOOL: networkidle timeout, proceeding with partial DOM")
+        html = page.content()
+        browser.close()
+    return html
  
     def scrape(self, timestamp: str) -> Iterable[FuelRecord]:
         html = self._fetch_rendered_html()
