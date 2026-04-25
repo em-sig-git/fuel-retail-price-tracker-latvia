@@ -1,4 +1,29 @@
 ﻿timestamp;country;brand;fuel_code;fuel_name_raw;price_eur_l;dus_address;source_url;note
+2026-04-25T18:03+03:00;LV;Circle K;DD;Dmiles;1.894;Gunāra Astras iela 10;https://www.circlek.lv/degviela-miles/degvielas-cenas;
+2026-04-25T18:03+03:00;LV;Circle K;DD+;Dmiles+;2.024;Gunāra Astras iela 10;https://www.circlek.lv/degviela-miles/degvielas-cenas;
+2026-04-25T18:03+03:00;LV;Circle K;E95;95miles;1.764;Gunāra Astras iela 10;https://www.circlek.lv/degviela-miles/degvielas-cenas;
+2026-04-25T18:03+03:00;LV;Circle K;E98;98miles+;1.834;Gunāra Astras iela 10;https://www.circlek.lv/degviela-miles/degvielas-cenas;
+2026-04-25T18:03+03:00;LV;Circle K;LPG;Autogāze;1.055;Vienības gatve 105;https://www.circlek.lv/degviela-miles/degvielas-cenas;
+2026-04-25T18:03+03:00;LV;Latvijas Nafta;DD;DD Eiro;1.997;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
+2026-04-25T18:03+03:00;LV;Latvijas Nafta;E95;95 E;1.797;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
+2026-04-25T18:03+03:00;LV;Latvijas Nafta;E98;98 E;1.877;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
+2026-04-25T18:03+03:00;LV;Latvijas Nafta;LPG;Auto gāze;1.075;Garkalnes novads, Siguldas šoseja 4A, Berģi, Ropažu novads, LV-1024;https://www.lnafta.lv/lv/start/dus-tikls;Only rows with numeric values are recorded
+2026-04-25T18:03+03:00;LV;Neste;DD;Neste Futura D;1.887;Latgales 427b, Latgales 448b, Lubānas 64, Kuldīgas 1, A.Deglava 51a, Kurzemes pr. 15a, Jūrmalas gatve 46b, Brīvības gatve 386, Lucavsalas 1;https://www.neste.lv/lv/content/degvielas-cenas;
+2026-04-25T18:03+03:00;LV;Neste;DD+;Neste Pro Diesel;2.017;Latgales 427b, Latgales 448b, Lubānas 64, Kuldīgas 1, A.Deglava 51a, Kurzemes pr. 15a, Jūrmalas gatve 46b, Brīvības gatve 386, Lucavsalas 1;https://www.neste.lv/lv/content/degvielas-cenas;
+2026-04-25T18:03+03:00;LV;Neste;E95;Neste Futura 95;1.757;Latgales 427b, Latgales 448b, Lubānas 64, Kuldīgas 1, A.Deglava 51a, Kurzemes pr. 15a, Jūrmalas gatve 46b, Brīvības gatve 386, Lucavsalas 1;https://www.neste.lv/lv/content/degvielas-cenas;
+2026-04-25T18:03+03:00;LV;Neste;E98;Neste Futura 98;1.827;Latgales 427b, Latgales 448b, Lubānas 64, Kuldīgas 1, A.Deglava 51a, Kurzemes pr. 15a, Jūrmalas gatve 46b, Brīvības gatve 386, Lucavsalas 1;https://www.neste.lv/lv/content/degvielas-cenas;
+2026-04-25T18:03+03:00;LV;Viada;DD;DD;1.894;DUS Dārzciema : Dārzciema iela 69, Rīga, DUS Dārzciema 2 : Dārzciema iela 62, Rīga;https://www.viada.lv/zemakas-degvielas-cenas/;Multiple DUS may share one price row
+2026-04-25T18:03+03:00;LV;Viada;E85;E85;1.959;DUS Astras : G.Astras iela 7, Rīga, DUS Vecmīlgrāvis : Emmas iela 45, Rīga;https://www.viada.lv/zemakas-degvielas-cenas/;Multiple DUS may share one price row
+2026-04-25T18:03+03:00;LV;Viada;E98;E98;1.812;ADUS Valgales : Valgales iela 1, Rīga, ADUS Biķernieku : Vecā Biķernieku iela 1, Rīga, ADUS Saharova : Andreja Saharova iela 10, Rīga, ADUS Ulmaņa : Kārļa Ulmaņa gatve 67, Rīga, ADUS Salaspils : Salaspils iela 4a, Rīga, ADUS Liepāja 2 : Zemnieku iela 58, Liepāja, ADUS Valdeķu : Valdeķu iela 34, Rīga;https://www.viada.lv/zemakas-degvielas-cenas/;Multiple DUS may share one price row
+2026-04-25T18:03+03:00;LV;Viada;Ecto-95;Ecto-95;1.707;ADUS Valgales : Valgales iela 1, Rīga, ADUS Biķernieku : Vecā Biķernieku iela 1, Rīga, ADUS Saharova : Andreja Saharova iela 10, Rīga, ADUS Ulmaņa : Kārļa Ulmaņa gatve 67, Rīga, ADUS Salaspils : Salaspils iela 4a, Rīga, ADUS Liepāja 2 : Zemnieku iela 58, Liepāja, ADUS Valdeķu : Valdeķu iela 34, Rīga;https://www.viada.lv/zemakas-degvielas-cenas/;Multiple DUS may share one price row
+2026-04-25T18:03+03:00;LV;Viada;Ecto-95+;Ecto-95+;1.732;ADUS Biķernieku : Vecā Biķernieku iela 1, Rīga;https://www.viada.lv/zemakas-degvielas-cenas/;Multiple DUS may share one price row
+2026-04-25T18:03+03:00;LV;Viada;Ecto-DD;Ecto-DD;1.827;ADUS Liepāja 2 : Zemnieku iela 58, Liepāja, ADUS Valdeķu : Valdeķu iela 34, Rīga, ADUS Valgales : Valgales iela 1, Rīga, ADUS Ulmaņa : Kārļa Ulmaņa gatve 67, Rīga, ADUS Salaspils : Salaspils iela 4a, Rīga;https://www.viada.lv/zemakas-degvielas-cenas/;Multiple DUS may share one price row
+2026-04-25T18:03+03:00;LV;Viada;LPG;LPG;0.985;ADUS Saharova : Andreja Saharova iela 10, Rīga, ADUS Valdeķu : Valdeķu iela 34, Rīga;https://www.viada.lv/zemakas-degvielas-cenas/;Multiple DUS may share one price row
+2026-04-25T18:03+03:00;LV;Virši;CNG;CNG;1.774;Visā Viršu tīklā;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
+2026-04-25T18:03+03:00;LV;Virši;DD;DD;1.904;Latgales iela 450K, Rīga, LV-1063;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
+2026-04-25T18:03+03:00;LV;Virši;E95;95E;1.774;Latgales iela 450K, Rīga, LV-1063;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
+2026-04-25T18:03+03:00;LV;Virši;E98;98E;1.844;Latgales iela 450K, Rīga, LV-1063;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
+2026-04-25T18:03+03:00;LV;Virši;LPG;LPG;1.085;Visā Viršu tīklā;https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena;
 2026-04-25T15:04+03:00;LV;Circle K;DD;Dmiles;1.894;Gunāra Astras iela 10;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-25T15:04+03:00;LV;Circle K;DD+;Dmiles+;2.024;Gunāra Astras iela 10;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-04-25T15:04+03:00;LV;Circle K;E95;95miles;1.764;Gunāra Astras iela 10;https://www.circlek.lv/degviela-miles/degvielas-cenas;
