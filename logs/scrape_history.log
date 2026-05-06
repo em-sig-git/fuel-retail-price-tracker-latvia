@@ -3536,3 +3536,14 @@ Call log:
 2026-05-06 06:32:41,868 [INFO] Latvijas Nafta: 4 rows
 2026-05-06 06:32:41,907 [INFO] Saved 3947 rows to /home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/data/fuel_prices_latvia.csv
 2026-05-06 06:32:41,907 [INFO] Scrape session finished. New rows: 29
+2026-05-06 10:06:44,291 [INFO] Scrape session started at 2026-05-06T13:06+03:00
+2026-05-06 10:06:44,912 [INFO] Circle K: 5 rows
+2026-05-06 10:06:46,016 [INFO] Neste: 4 rows
+2026-05-06 10:06:47,179 [INFO] Virši: 5 rows
+2026-05-06 10:06:49,925 [INFO] Viada: 7 rows
+2026-05-06 10:07:12,200 [WARNING] KOOL: networkidle timeout, proceeding with partial DOM
+2026-05-06 10:07:12,325 [INFO] KOOL: found 134 widget-text-v3 elements in fetched HTML
+2026-05-06 10:07:12,334 [INFO] KOOL: 4 rows
+2026-05-06 10:07:13,711 [INFO] Latvijas Nafta: 4 rows
+2026-05-06 10:07:13,750 [INFO] Saved 3976 rows to /home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/data/fuel_prices_latvia.csv
+2026-05-06 10:07:13,750 [INFO] Scrape session finished. New rows: 29
