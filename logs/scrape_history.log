@@ -4672,3 +4672,14 @@ Traceback (most recent call last):
 requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='www.lnafta.lv', port=443): Max retries exceeded with url: /lv/start/dus-tikls (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.lnafta.lv', port=443) at 0x7fd5dc7c7110>, 'Connection to www.lnafta.lv timed out. (connect timeout=45)'))
 2026-05-22 12:17:02,693 [INFO] Saved 6591 rows to /home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/data/fuel_prices_latvia.csv
 2026-05-22 12:17:02,693 [INFO] Scrape session finished. New rows: 25
+2026-05-22 12:36:35,822 [INFO] Scrape session started at 2026-05-22T15:36+03:00
+2026-05-22 12:36:36,500 [INFO] Circle K: 5 rows
+2026-05-22 12:36:37,946 [INFO] Neste: 4 rows
+2026-05-22 12:36:39,298 [INFO] Virši: 5 rows
+2026-05-22 12:36:41,895 [INFO] Viada: 7 rows
+2026-05-22 12:37:05,212 [WARNING] KOOL: networkidle timeout, proceeding with partial DOM
+2026-05-22 12:37:05,354 [INFO] KOOL: found 134 widget-text-v3 elements in fetched HTML
+2026-05-22 12:37:05,362 [INFO] KOOL: 4 rows
+2026-05-22 12:37:06,740 [INFO] Latvijas Nafta: 4 rows
+2026-05-22 12:37:06,799 [INFO] Saved 6620 rows to /home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/data/fuel_prices_latvia.csv
+2026-05-22 12:37:06,799 [INFO] Scrape session finished. New rows: 29
