@@ -4870,3 +4870,14 @@ requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='www.lnafta.lv', po
 2026-05-26 06:36:52,660 [INFO] Latvijas Nafta: 4 rows
 2026-05-26 06:36:52,722 [INFO] Saved 7113 rows to /home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/data/fuel_prices_latvia.csv
 2026-05-26 06:36:52,722 [INFO] Scrape session finished. New rows: 29
+2026-05-26 10:30:56,104 [INFO] Scrape session started at 2026-05-26T13:30+03:00
+2026-05-26 10:30:56,787 [INFO] Circle K: 5 rows
+2026-05-26 10:30:58,010 [INFO] Neste: 4 rows
+2026-05-26 10:30:59,236 [INFO] Virši: 5 rows
+2026-05-26 10:31:01,858 [INFO] Viada: 7 rows
+2026-05-26 10:31:24,178 [WARNING] KOOL: networkidle timeout, proceeding with partial DOM
+2026-05-26 10:31:24,307 [INFO] KOOL: found 134 widget-text-v3 elements in fetched HTML
+2026-05-26 10:31:24,316 [INFO] KOOL: 4 rows
+2026-05-26 10:31:25,511 [INFO] Latvijas Nafta: 4 rows
+2026-05-26 10:31:25,572 [INFO] Saved 7142 rows to /home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/data/fuel_prices_latvia.csv
+2026-05-26 10:31:25,573 [INFO] Scrape session finished. New rows: 29
