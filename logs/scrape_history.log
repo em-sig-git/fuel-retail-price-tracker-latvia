@@ -5807,3 +5807,26 @@ Call log:
 2026-06-05 14:41:46,417 [INFO] Latvijas Nafta: 4 rows
 2026-06-05 14:41:46,494 [INFO] Saved 8972 rows to /home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/data/fuel_prices_latvia.csv
 2026-06-05 14:41:46,494 [INFO] Scrape session finished. New rows: 25
+2026-06-05 16:44:02,833 [INFO] Scrape session started at 2026-06-05T19:44+03:00
+2026-06-05 16:44:03,078 [ERROR] Circle K failed: 403 Client Error: Forbidden for url: https://www.circlek.lv/degviela-miles/degvielas-cenas
+Traceback (most recent call last):
+  File "/home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/src/fuel_retail_price_tracker_latvia/main.py", line 28, in run
+    rows = [record.to_dict() for record in scraper.scrape(timestamp=timestamp)]
+                                           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/src/fuel_retail_price_tracker_latvia/scrapers/latvia.py", line 34, in scrape
+    html = fetch_html(self.source_url, session=self.session)
+  File "/home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/src/fuel_retail_price_tracker_latvia/utils.py", line 42, in fetch_html
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/requests/models.py", line 1167, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://www.circlek.lv/degviela-miles/degvielas-cenas
+2026-06-05 16:44:04,849 [INFO] Neste: 4 rows
+2026-06-05 16:44:06,638 [INFO] Virši: 5 rows
+2026-06-05 16:44:10,055 [INFO] Viada: 7 rows
+2026-06-05 16:44:32,531 [WARNING] KOOL: networkidle timeout, proceeding with partial DOM
+2026-06-05 16:44:32,689 [INFO] KOOL: found 134 widget-text-v3 elements in fetched HTML
+2026-06-05 16:44:32,698 [INFO] KOOL: 4 rows
+2026-06-05 16:44:34,127 [INFO] Latvijas Nafta: 4 rows
+2026-06-05 16:44:34,206 [INFO] Saved 8996 rows to /home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/data/fuel_prices_latvia.csv
+2026-06-05 16:44:34,206 [INFO] Scrape session finished. New rows: 24
