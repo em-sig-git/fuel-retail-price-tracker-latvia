@@ -7530,3 +7530,14 @@ requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://www.
 2026-06-30 05:50:12,161 [INFO] Latvijas Nafta: 4 rows
 2026-06-30 05:50:12,261 [INFO] Saved 13186 rows to /home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/data/fuel_prices_latvia.csv
 2026-06-30 05:50:12,262 [INFO] Scrape session finished. New rows: 29
+2026-06-30 06:28:20,852 [INFO] Scrape session started at 2026-06-30T09:28+03:00
+2026-06-30 06:28:22,010 [INFO] Circle K: 5 rows
+2026-06-30 06:28:24,016 [INFO] Neste: 4 rows
+2026-06-30 06:28:25,557 [INFO] Virši: 5 rows
+2026-06-30 06:28:28,785 [INFO] Viada: 7 rows
+2026-06-30 06:28:52,797 [WARNING] KOOL: networkidle timeout, proceeding with partial DOM
+2026-06-30 06:28:52,943 [INFO] KOOL: found 134 widget-text-v3 elements in fetched HTML
+2026-06-30 06:28:52,952 [INFO] KOOL: 4 rows
+2026-06-30 06:28:54,772 [INFO] Latvijas Nafta: 4 rows
+2026-06-30 06:28:54,878 [INFO] Saved 13215 rows to /home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/data/fuel_prices_latvia.csv
+2026-06-30 06:28:54,879 [INFO] Scrape session finished. New rows: 29
