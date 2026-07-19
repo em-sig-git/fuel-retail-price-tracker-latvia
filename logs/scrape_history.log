@@ -8985,3 +8985,55 @@ requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='www.lnafta.lv', po
 2026-07-19 13:57:23,577 [INFO] Latvijas Nafta: 4 rows
 2026-07-19 13:57:23,708 [INFO] Saved 16765 rows to /home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/data/fuel_prices_latvia.csv
 2026-07-19 13:57:23,708 [INFO] Scrape session finished. New rows: 29
+2026-07-19 15:18:29,281 [INFO] Scrape session started at 2026-07-19T18:18+03:00
+2026-07-19 15:18:30,157 [INFO] Circle K: 5 rows
+2026-07-19 15:18:32,349 [INFO] Neste: 4 rows
+2026-07-19 15:18:34,096 [INFO] Virši: 5 rows
+2026-07-19 15:18:37,246 [INFO] Viada: 7 rows
+2026-07-19 15:19:09,893 [ERROR] KOOL failed: Page.wait_for_selector: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("div.rmwidget.widget-text-v3")
+Traceback (most recent call last):
+  File "/home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/src/fuel_retail_price_tracker_latvia/main.py", line 28, in run
+    rows = [record.to_dict() for record in scraper.scrape(timestamp=timestamp)]
+                                           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/src/fuel_retail_price_tracker_latvia/scrapers/latvia.py", line 244, in scrape
+    html = self._fetch_rendered_html()
+  File "/home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/src/fuel_retail_price_tracker_latvia/scrapers/latvia.py", line 232, in _fetch_rendered_html
+    page.wait_for_selector("div.rmwidget.widget-text-v3", state="attached", timeout=30000)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/playwright/sync_api/_generated.py", line 8928, in wait_for_selector
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.wait_for_selector(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        )
+        ^
+    )
+    ^
+  File "/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/playwright/_impl/_page.py", line 427, in wait_for_selector
+    return await self._main_frame.wait_for_selector(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/playwright/_impl/_frame.py", line 394, in wait_for_selector
+    await self._channel.send(
+        "waitForSelector", self._timeout, locals_to_params(locals())
+    )
+  File "/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/playwright/_impl/_connection.py", line 563, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.wait_for_selector: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("div.rmwidget.widget-text-v3")
+
+2026-07-19 15:19:11,482 [INFO] Latvijas Nafta: 4 rows
+2026-07-19 15:19:11,615 [INFO] Saved 16790 rows to /home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/data/fuel_prices_latvia.csv
+2026-07-19 15:19:11,615 [INFO] Scrape session finished. New rows: 25
