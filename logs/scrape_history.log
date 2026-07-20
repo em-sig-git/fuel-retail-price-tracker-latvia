@@ -9059,3 +9059,14 @@ Call log:
 2026-07-20 09:38:38,910 [INFO] Latvijas Nafta: 4 rows
 2026-07-20 09:38:39,022 [INFO] Saved 16848 rows to /home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/data/fuel_prices_latvia.csv
 2026-07-20 09:38:39,023 [INFO] Scrape session finished. New rows: 29
+2026-07-20 12:27:22,290 [INFO] Scrape session started at 2026-07-20T15:27+03:00
+2026-07-20 12:27:22,899 [INFO] Circle K: 5 rows
+2026-07-20 12:27:24,251 [INFO] Neste: 4 rows
+2026-07-20 12:27:25,427 [INFO] Virši: 5 rows
+2026-07-20 12:27:28,152 [INFO] Viada: 7 rows
+2026-07-20 12:27:52,397 [WARNING] KOOL: networkidle timeout, proceeding with partial DOM
+2026-07-20 12:27:52,548 [INFO] KOOL: found 134 widget-text-v3 elements in fetched HTML
+2026-07-20 12:27:52,557 [INFO] KOOL: 4 rows
+2026-07-20 12:27:53,716 [INFO] Latvijas Nafta: 4 rows
+2026-07-20 12:27:53,844 [INFO] Saved 16877 rows to /home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/data/fuel_prices_latvia.csv
+2026-07-20 12:27:53,844 [INFO] Scrape session finished. New rows: 29
