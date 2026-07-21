@@ -9104,3 +9104,14 @@ Call log:
 2026-07-21 09:04:58,986 [INFO] Latvijas Nafta: 4 rows
 2026-07-21 09:04:59,117 [INFO] Saved 16960 rows to /home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/data/fuel_prices_latvia.csv
 2026-07-21 09:04:59,118 [INFO] Scrape session finished. New rows: 29
+2026-07-21 12:02:29,458 [INFO] Scrape session started at 2026-07-21T15:02+03:00
+2026-07-21 12:02:30,187 [INFO] Circle K: 5 rows
+2026-07-21 12:02:32,104 [INFO] Neste: 4 rows
+2026-07-21 12:02:33,349 [INFO] Virši: 5 rows
+2026-07-21 12:02:36,365 [INFO] Viada: 7 rows
+2026-07-21 12:03:01,130 [WARNING] KOOL: networkidle timeout, proceeding with partial DOM
+2026-07-21 12:03:01,291 [INFO] KOOL: found 134 widget-text-v3 elements in fetched HTML
+2026-07-21 12:03:01,300 [INFO] KOOL: 4 rows
+2026-07-21 12:03:02,483 [INFO] Latvijas Nafta: 4 rows
+2026-07-21 12:03:02,618 [INFO] Saved 16989 rows to /home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/data/fuel_prices_latvia.csv
+2026-07-21 12:03:02,619 [INFO] Scrape session finished. New rows: 29
