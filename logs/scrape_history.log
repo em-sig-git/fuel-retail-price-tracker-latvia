@@ -11914,3 +11914,14 @@ Traceback (most recent call last):
 requests.exceptions.SSLError: HTTPSConnectionPool(host='www.lnafta.lv', port=443): Max retries exceeded with url: /lv/start/dus-tikls (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1081)')))
 2026-08-26 05:32:44,589 [INFO] Saved 22884 rows to /home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/data/fuel_prices_latvia.csv
 2026-08-26 05:32:44,590 [INFO] Scrape session finished. New rows: 21
+2026-08-26 07:12:00,609 [INFO] Scrape session started at 2026-08-26T10:12+03:00
+2026-08-26 07:12:01,348 [INFO] Circle K: 5 rows
+2026-08-26 07:12:02,576 [INFO] Neste: 0 rows
+2026-08-26 07:12:03,995 [INFO] Virši: 5 rows
+2026-08-26 07:12:06,585 [INFO] Viada: 7 rows
+2026-08-26 07:12:29,478 [WARNING] KOOL: networkidle timeout, proceeding with partial DOM
+2026-08-26 07:12:29,638 [INFO] KOOL: found 134 widget-text-v3 elements in fetched HTML
+2026-08-26 07:12:29,647 [INFO] KOOL: 4 rows
+2026-08-26 07:12:30,639 [INFO] Latvijas Nafta: 4 rows
+2026-08-26 07:12:30,814 [INFO] Saved 22909 rows to /home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/data/fuel_prices_latvia.csv
+2026-08-26 07:12:30,815 [INFO] Scrape session finished. New rows: 25
