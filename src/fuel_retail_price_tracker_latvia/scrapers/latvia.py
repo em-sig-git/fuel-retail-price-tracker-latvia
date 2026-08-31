@@ -2,6 +2,7 @@ from __future__ import annotations
  
 import logging
 import re
+import requests
 from collections import defaultdict
 from typing import Iterable, List
  
@@ -161,8 +162,7 @@ class ViadaScraper(BaseBrandScraper):
     }
  
     def __init__(self, session: requests.Session) -> None:
-        import requests as _req
-        viada_session = _req.Session()
+        viada_session = requests.Session()
         viada_session.verify = False
         super().__init__(viada_session)
  
