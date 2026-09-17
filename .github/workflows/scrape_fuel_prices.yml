@@ -3,7 +3,7 @@ name: Scrape fuel prices
 on:
   workflow_dispatch:
   schedule:
-    - cron: "20 9-18/2 * * *"
+    - cron: "20 6-18/2 * * *"
       timezone: "Europe/Riga"
 
 permissions:
