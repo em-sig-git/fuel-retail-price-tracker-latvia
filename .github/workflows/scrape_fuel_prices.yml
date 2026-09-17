@@ -26,8 +26,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Install Playwright browsers
-        run: playwright install chromium --with-deps
+      - name: Run tests
+        run: python -m unittest discover -s tests -v
 
       - name: Run scraper
         run: python -m src.fuel_retail_price_tracker_latvia.main

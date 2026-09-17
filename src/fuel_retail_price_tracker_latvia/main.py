@@ -6,9 +6,10 @@ import pandas as pd
 import requests
 
 from .config import DATA_DIR, LOG_DIR
+from .scrapers.latvia import LATVIA_SCRAPERS
 from .storage import merge_and_save
 from .utils import ScrapeError, as_dataframe, setup_logging, timestamp_now_iso
-from .scrapers.latvia import LATVIA_SCRAPERS
+from .validation import validate_brand_records
 
 
 def run() -> int:
@@ -20,20 +21,32 @@ def run() -> int:
     logging.info("Scrape session started at %s", timestamp)
 
     all_rows = []
+    successful_brands = []
+    failed_brands = []
     session = requests.Session()
 
     for scraper_cls in LATVIA_SCRAPERS:
         scraper = scraper_cls(session)
         try:
             rows = [record.to_dict() for record in scraper.scrape(timestamp=timestamp)]
+            validate_brand_records(scraper.brand, rows)
             logging.info("%s: %s rows", scraper.brand, len(rows))
             all_rows.extend(rows)
+            successful_brands.append(scraper.brand)
         except Exception as exc:
             logging.exception("%s failed: %s", scraper.brand, exc)
+            failed_brands.append(scraper.brand)
 
     df_new = as_dataframe(all_rows)
     if df_new.empty:
-        raise ScrapeError("No rows scraped from any configured source")
+        raise ScrapeError("No valid rows scraped from any configured source")
+
+    if failed_brands:
+        logging.warning(
+            "Partial scrape: saving successful brands %s; failed brands: %s",
+            ", ".join(successful_brands),
+            ", ".join(failed_brands),
+        )
 
     df_new = df_new.sort_values(by=["brand", "fuel_code", "dus_address"])
     merge_and_save(df_new)
