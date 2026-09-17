@@ -13109,3 +13109,10 @@ Call log:
 2026-09-17 12:20:31,503 [INFO] Latvijas Nafta: 4 rows
 2026-09-17 12:20:31,684 [INFO] Saved 22349 rows to /home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/data/fuel_prices_latvia.csv
 2026-09-17 12:20:31,685 [INFO] Scrape session finished. New rows: 21
+2026-09-17 17:38:52,983 [INFO] Scrape session started at 2026-09-17T20:38+03:00
+2026-09-17 17:38:53,584 [INFO] Circle K: 5 rows
+2026-09-17 17:38:54,575 [INFO] Virši: 5 rows
+2026-09-17 17:38:57,535 [INFO] Viada: 7 rows
+2026-09-17 17:38:58,702 [INFO] Latvijas Nafta: 4 rows
+2026-09-17 17:38:58,881 [INFO] Saved 22370 rows to /home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/data/fuel_prices_latvia.csv
+2026-09-17 17:38:58,882 [INFO] Scrape session finished. New rows: 21
