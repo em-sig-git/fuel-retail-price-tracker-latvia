@@ -13123,3 +13123,10 @@ Call log:
 2026-09-18 05:46:19,148 [INFO] Latvijas Nafta: 4 rows
 2026-09-18 05:46:19,307 [INFO] Saved 22391 rows to /home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/data/fuel_prices_latvia.csv
 2026-09-18 05:46:19,308 [INFO] Scrape session finished. New rows: 21
+2026-09-18 07:32:46,724 [INFO] Scrape session started at 2026-09-18T10:32+03:00
+2026-09-18 07:32:47,348 [INFO] Circle K: 5 rows
+2026-09-18 07:32:48,355 [INFO] Virši: 5 rows
+2026-09-18 07:32:50,800 [INFO] Viada: 7 rows
+2026-09-18 07:32:51,771 [INFO] Latvijas Nafta: 4 rows
+2026-09-18 07:32:51,948 [INFO] Saved 22412 rows to /home/runner/work/fuel-retail-price-tracker-latvia/fuel-retail-price-tracker-latvia/data/fuel_prices_latvia.csv
+2026-09-18 07:32:51,949 [INFO] Scrape session finished. New rows: 21
