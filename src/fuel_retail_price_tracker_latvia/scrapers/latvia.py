@@ -54,7 +54,7 @@ class CircleKScraper(BaseBrandScraper):
  
 class VirsiScraper(BaseBrandScraper):
     brand = "Virši"
-    source_url = "https://www.virsi.lv/lv/privatpersonam/elektriba/degvielas-cena"
+    source_url = "https://www.virsi.lv/lv/privatpersonam/degviela/degvielas-un-elektrouzlades-cenas"
     fuel_map = {
         "95E": "E95",
         "98E": "E98",
