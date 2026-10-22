@@ -53,7 +53,8 @@ jobs:
               assert set(saved["brand"]) == {"Circle K", "Virši", "Viada", "Latvijas Nafta"}
               virsi = saved[saved["brand"] == "Virši"]
               assert {"E95", "E98", "DD"} <= set(virsi["fuel_code"])
-              assert virsi["price_eur_l"].between(0.5, 3.0).all()
+              prices = pd.to_numeric(virsi["price_eur_l"].astype(str).str.replace(",", ".", regex=False))
+              assert prices.between(0.5, 3.0).all()
               print(f"VERIFIED: {len(virsi)} live Virši records saved to a temporary CSV")
               print(virsi[["timestamp", "fuel_code", "price_eur_l", "dus_address", "source_url"]].to_string(index=False))
           PY
