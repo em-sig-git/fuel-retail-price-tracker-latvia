@@ -14,57 +14,40 @@ permissions:
 jobs:
   virsi:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 6
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.14.3"
-      - name: Install HTTP clients
-        run: python -m pip install -r requirements.txt curl_cffi
-      - name: Check live prices with browser-compatible HTTP transports
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt seleniumbase==4.56.3
+      - name: Check live Virsi collection through CDP
         run: |
           python - <<'PY'
           import json
+          from unittest.mock import patch
           import requests
-          from curl_cffi import requests as curl_requests
+          from seleniumbase import SB
           from src.fuel_retail_price_tracker_latvia.scrapers.latvia import VirsiScraper
           from src.fuel_retail_price_tracker_latvia.utils import timestamp_now_iso
           from src.fuel_retail_price_tracker_latvia.validation import validate_brand_records
 
-          class Transport:
-              def __init__(self, profile):
-                  self.profile = profile
-                  self.session = curl_requests.Session(impersonate=profile)
-              def get(self, url, *, headers, timeout):
-                  response = self.session.get(url, timeout=min(timeout, 25))
-                  print(f"{self.profile}: HTTP {response.status_code}; cf-mitigated={response.headers.get('cf-mitigated')}", flush=True)
-                  if response.headers.get('cf-mitigated') == 'challenge':
-                      raise RuntimeError('Cloudflare challenge')
-                  if not response.ok:
-                      response.raise_for_status()
-                  from bs4 import BeautifulSoup
-                  if not BeautifulSoup(response.text, 'html.parser').select('.price-card'):
-                      raise RuntimeError('No fuel-price cards in the response')
-                  return response
-              def close(self):
-                  self.session.close()
+          url = VirsiScraper.source_url
+          with SB(uc=True, test=True, xvfb=True, locale="lv", guest=True) as sb:
+              sb.activate_cdp_mode(url)
+              print(f"WebDriver connected during verification: {sb.is_connected()}", flush=True)
+              print(f"Initial page title: {sb.cdp.get_title()}", flush=True)
+              sb.solve_captcha()
+              sb.cdp.wait_for_element(".price-card p.price span:nth-child(2)", timeout=35)
+              html = sb.cdp.get_page_source()
+              print(f"Final page title: {sb.cdp.get_title()}", flush=True)
 
-          success = False
-          for profile in ("chrome", "safari"):
-              transport = Transport(profile)
-              try:
-                  scraper = VirsiScraper(transport)
+          with requests.Session() as session:
+              scraper = VirsiScraper(session)
+              with patch.object(scraper, "_fetch_price_html", return_value=html):
                   rows = [record.to_dict() for record in scraper.scrape(timestamp_now_iso())]
-                  validate_brand_records("Virši", rows)
-                  print(f"VERIFIED: {len(rows)} Virši records using {profile}", flush=True)
-                  print(json.dumps(rows, ensure_ascii=False, indent=2))
-                  success = True
-                  break
-              except Exception as exc:
-                  print(f"{profile}: {type(exc).__name__}: {exc}", flush=True)
-              finally:
-                  transport.close()
-          if not success:
-              raise SystemExit("Neither HTTP transport returned valid Virši records")
+          validate_brand_records("Virši", rows)
+          print(f"VERIFIED: {len(rows)} live Virši records through CDP", flush=True)
+          print(json.dumps(rows, ensure_ascii=False, indent=2))
           PY
