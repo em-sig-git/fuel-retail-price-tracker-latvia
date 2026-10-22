@@ -6,11 +6,12 @@ uses Playwright Chromium when Virši returns HTTP 403, 429 or 503, or when its H
 contains no price cards. It adapts the browser rendering approach used by the
 earlier KOOL scraper (commit `15f79b172dd6ac56b0048492ddf2e4c67b2d72ca`).
 
-Chromium executes page JavaScript and waits for the actual fuel-price elements.
+Chromium runs with a display, executes page JavaScript and waits for the actual fuel-price elements.
 Only the existing price parser's output reaches validation and storage. The
 fallback has a bounded wait; a remaining challenge cannot become a price record.
 
-The Actions workflow installs Chromium and its OS dependencies. Local runs that
+The Ubuntu Actions workflow installs Chromium and its OS dependencies and uses
+Xvfb to provide the display. Local runs that
 succeed with the HTTP client do not launch a browser. To install the fallback
 locally when needed:
 
@@ -21,9 +22,10 @@ python -m unittest discover -s tests -v
 python -m src.fuel_retail_price_tracker_latvia.main
 ```
 
-Apply the included `virsi-browser-fix.patch` from a current repository checkout,
-then commit and run the Actions workflow. The patch does not change the stored
-CSV, the other retailers' scrapers, or the existing policy for partial runs.
+The change does not alter the stored CSV, the other retailers' scrapers, or the
+existing policy for partial runs. To check live Virši collection without writing
+any CSV data, run `python -m src.fuel_retail_price_tracker_latvia.check_virsi`.
+On a Linux machine without a desktop, prefix that command with `xvfb-run -a`.
 
 Browser fallback behavior and price parsing are covered by automated tests.
 Successful Virši collection on a GitHub-hosted runner still needs an actual

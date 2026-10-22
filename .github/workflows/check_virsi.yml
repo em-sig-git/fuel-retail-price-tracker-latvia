@@ -13,9 +13,17 @@ on:
 permissions:
   contents: read
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   virsi:
-    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
@@ -30,19 +38,8 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Verify live Virsi records without updating CSV
         run: |
-          python - <<'PY'
-          import json
-          import logging
-          import requests
-          from src.fuel_retail_price_tracker_latvia.scrapers.latvia import VirsiScraper
-          from src.fuel_retail_price_tracker_latvia.utils import timestamp_now_iso
-          from src.fuel_retail_price_tracker_latvia.validation import validate_brand_records
-
-          logging.basicConfig(level=logging.INFO)
-          with requests.Session() as session:
-              scraper = VirsiScraper(session)
-              rows = [record.to_dict() for record in scraper.scrape(timestamp_now_iso())]
-          validate_brand_records("Virši", rows)
-          print(f"Verified {len(rows)} live Virši records on a GitHub-hosted runner")
-          print(json.dumps(rows, ensure_ascii=False, indent=2))
-          PY
+          if [ "$RUNNER_OS" = "Linux" ]; then
+            xvfb-run -a python -m src.fuel_retail_price_tracker_latvia.check_virsi
+          else
+            python -m src.fuel_retail_price_tracker_latvia.check_virsi
+          fi
