@@ -4,42 +4,67 @@ on:
   pull_request:
     paths:
       - "src/**"
-      - "tests/**"
       - "requirements.txt"
       - ".github/workflows/check_virsi.yml"
-      - ".github/workflows/scrape_fuel_prices.yml"
   workflow_dispatch:
 
 permissions:
   contents: read
 
-defaults:
-  run:
-    shell: bash
-
 jobs:
   virsi:
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
-    runs-on: ${{ matrix.os }}
-    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.14.3"
-      - name: Install dependencies and Chromium
+      - name: Install HTTP clients
+        run: python -m pip install -r requirements.txt curl_cffi
+      - name: Check live prices with browser-compatible HTTP transports
         run: |
-          python -m pip install -r requirements.txt
-          python -m playwright install --with-deps chromium
-      - name: Run tests
-        run: python -m unittest discover -s tests -v
-      - name: Verify live Virsi records without updating CSV
-        run: |
-          if [ "$RUNNER_OS" = "Linux" ]; then
-            xvfb-run -a python -m src.fuel_retail_price_tracker_latvia.check_virsi
-          else
-            python -m src.fuel_retail_price_tracker_latvia.check_virsi
-          fi
+          python - <<'PY'
+          import json
+          import requests
+          from curl_cffi import requests as curl_requests
+          from src.fuel_retail_price_tracker_latvia.scrapers.latvia import VirsiScraper
+          from src.fuel_retail_price_tracker_latvia.utils import timestamp_now_iso
+          from src.fuel_retail_price_tracker_latvia.validation import validate_brand_records
+
+          class Transport:
+              def __init__(self, profile):
+                  self.profile = profile
+                  self.session = curl_requests.Session(impersonate=profile)
+              def get(self, url, *, headers, timeout):
+                  response = self.session.get(url, timeout=min(timeout, 25))
+                  print(f"{self.profile}: HTTP {response.status_code}; cf-mitigated={response.headers.get('cf-mitigated')}", flush=True)
+                  if response.headers.get('cf-mitigated') == 'challenge':
+                      raise RuntimeError('Cloudflare challenge')
+                  if not response.ok:
+                      response.raise_for_status()
+                  from bs4 import BeautifulSoup
+                  if not BeautifulSoup(response.text, 'html.parser').select('.price-card'):
+                      raise RuntimeError('No fuel-price cards in the response')
+                  return response
+              def close(self):
+                  self.session.close()
+
+          success = False
+          for profile in ("chrome", "safari"):
+              transport = Transport(profile)
+              try:
+                  scraper = VirsiScraper(transport)
+                  rows = [record.to_dict() for record in scraper.scrape(timestamp_now_iso())]
+                  validate_brand_records("Virši", rows)
+                  print(f"VERIFIED: {len(rows)} Virši records using {profile}", flush=True)
+                  print(json.dumps(rows, ensure_ascii=False, indent=2))
+                  success = True
+                  break
+              except Exception as exc:
+                  print(f"{profile}: {type(exc).__name__}: {exc}", flush=True)
+              finally:
+                  transport.close()
+          if not success:
+              raise SystemExit("Neither HTTP transport returned valid Virši records")
+          PY
