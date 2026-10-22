@@ -1,0 +1,59 @@
+name: Check Virsi collection
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "src/**"
+      - "tests/**"
+      - "requirements.txt"
+      - ".github/workflows/check_virsi.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14.3"
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Run tests
+        run: python -m unittest discover -s tests -v
+      - name: Verify live collection and CSV recording
+        run: |
+          python - <<'PY'
+          import logging
+          import tempfile
+          from pathlib import Path
+          from unittest.mock import patch
+
+          import pandas as pd
+
+          from src.fuel_retail_price_tracker_latvia import main
+          from src.fuel_retail_price_tracker_latvia.storage import merge_and_save
+
+          logging.basicConfig(level=logging.INFO)
+          with tempfile.TemporaryDirectory() as directory:
+              state = Path(directory)
+              csv_path = state / "fuel_prices.csv"
+              with (
+                  patch.object(main, "DATA_DIR", state / "data"),
+                  patch.object(main, "LOG_DIR", state / "logs"),
+                  patch.object(main, "setup_logging"),
+                  patch.object(main, "merge_and_save", side_effect=lambda frame: merge_and_save(frame, csv_path)),
+              ):
+                  assert main.run() == 0
+              saved = pd.read_csv(csv_path, sep=";", decimal=",", encoding="utf-8-sig")
+              assert set(saved["brand"]) == {"Circle K", "Virši", "Viada", "Latvijas Nafta"}
+              virsi = saved[saved["brand"] == "Virši"]
+              assert {"E95", "E98", "DD"} <= set(virsi["fuel_code"])
+              assert virsi["price_eur_l"].between(0.5, 3.0).all()
+              print(f"VERIFIED: {len(virsi)} live Virši records saved to a temporary CSV")
+              print(virsi[["timestamp", "fuel_code", "price_eur_l", "dus_address", "source_url"]].to_string(index=False))
+          PY

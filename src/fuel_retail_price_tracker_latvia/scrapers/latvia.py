@@ -1,11 +1,21 @@
 from __future__ import annotations
  
+import logging
 from typing import Iterable, List
  
+import requests
 from bs4 import BeautifulSoup
  
 from ..models import FuelRecord
-from ..utils import clean_text, extract_first_decimal, fetch_html, normalize_address, soupify
+from ..utils import (
+    ScrapeError,
+    clean_text,
+    extract_first_decimal,
+    fetch_html,
+    normalize_address,
+    soupify,
+)
+from ..validation import validate_brand_records
 from .base import BaseBrandScraper
  
  
@@ -55,6 +65,7 @@ class CircleKScraper(BaseBrandScraper):
 class VirsiScraper(BaseBrandScraper):
     brand = "Virši"
     source_url = "https://www.virsi.lv/lv/privatpersonam/degviela/degvielas-un-elektrouzlades-cenas"
+    fallback_url = "https://www.virsi.lt/lv/privatpersonam/degviela/degvielas-un-elektrouzlades-cenas"
     fuel_map = {
         "95E": "E95",
         "98E": "E98",
@@ -64,8 +75,30 @@ class VirsiScraper(BaseBrandScraper):
     }
  
     def scrape(self, timestamp: str) -> Iterable[FuelRecord]:
-        html = fetch_html(self.source_url, session=self.session)
-        soup = soupify(html)
+        failures = []
+        for url in (self.source_url, self.fallback_url):
+            try:
+                html = fetch_html(url, session=self.session)
+                soup = soupify(html)
+                if url == self.fallback_url:
+                    title = clean_text(soup.title.get_text()) if soup.title else ""
+                    if "Latvijā" not in title or "Virši" not in title:
+                        raise ScrapeError(
+                            "Official alternate domain did not return the Latvian price page"
+                        )
+                records = self._parse_price_cards(soup, timestamp, url)
+                validate_brand_records(self.brand, [record.to_dict() for record in records])
+                if url == self.fallback_url:
+                    logging.info("%s: collected Latvian prices from %s", self.brand, url)
+                return records
+            except (requests.RequestException, ScrapeError) as exc:
+                failures.append(f"{url}: {exc}")
+                logging.warning("%s price source failed: %s: %s", self.brand, url, exc)
+        raise ScrapeError("Virši price collection failed; " + "; ".join(failures))
+
+    def _parse_price_cards(
+        self, soup: BeautifulSoup, timestamp: str, source_url: str
+    ) -> List[FuelRecord]:
         records: List[FuelRecord] = []
         for card in soup.select(".price-card"):
             spans = card.select("p.price span")
@@ -89,7 +122,7 @@ class VirsiScraper(BaseBrandScraper):
                     fuel_name_raw=raw_name,
                     price_eur_l=price,
                     dus_address=address,
-                    source_url=self.source_url,
+                    source_url=source_url,
                     note="",
                 )
             )
