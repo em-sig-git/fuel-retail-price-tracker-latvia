@@ -1,0 +1,48 @@
+name: Check Virsi collection
+
+on:
+  pull_request:
+    paths:
+      - "src/**"
+      - "tests/**"
+      - "requirements.txt"
+      - ".github/workflows/check_virsi.yml"
+      - ".github/workflows/scrape_fuel_prices.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  virsi:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14.3"
+      - name: Install dependencies and Chromium
+        run: |
+          python -m pip install -r requirements.txt
+          python -m playwright install --with-deps chromium
+      - name: Run tests
+        run: python -m unittest discover -s tests -v
+      - name: Verify live Virsi records without updating CSV
+        run: |
+          python - <<'PY'
+          import json
+          import logging
+          import requests
+          from src.fuel_retail_price_tracker_latvia.scrapers.latvia import VirsiScraper
+          from src.fuel_retail_price_tracker_latvia.utils import timestamp_now_iso
+          from src.fuel_retail_price_tracker_latvia.validation import validate_brand_records
+
+          logging.basicConfig(level=logging.INFO)
+          with requests.Session() as session:
+              scraper = VirsiScraper(session)
+              rows = [record.to_dict() for record in scraper.scrape(timestamp_now_iso())]
+          validate_brand_records("Virši", rows)
+          print(f"Verified {len(rows)} live Virši records on a GitHub-hosted runner")
+          print(json.dumps(rows, ensure_ascii=False, indent=2))
+          PY

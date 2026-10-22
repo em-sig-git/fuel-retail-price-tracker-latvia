@@ -1,11 +1,14 @@
 from __future__ import annotations
  
+import logging
 from typing import Iterable, List
+
+import requests
  
 from bs4 import BeautifulSoup
  
 from ..models import FuelRecord
-from ..utils import clean_text, extract_first_decimal, fetch_html, normalize_address, soupify
+from ..utils import ScrapeError, clean_text, extract_first_decimal, fetch_html, normalize_address, soupify
 from .base import BaseBrandScraper
  
  
@@ -62,9 +65,54 @@ class VirsiScraper(BaseBrandScraper):
         "CNG": "CNG",
         "LPG": "LPG",
     }
+
+    def _fetch_rendered_html(self) -> str:
+        """Use the Chromium rendering approach previously used by the KOOL scraper."""
+        from playwright.sync_api import TimeoutError as PlaywrightTimeout
+        from playwright.sync_api import sync_playwright
+
+        with sync_playwright() as playwright:
+            browser = playwright.chromium.launch(channel="chromium", headless=True)
+            try:
+                page = browser.new_page(locale="lv-LV")
+                response = page.goto(
+                    self.source_url, wait_until="domcontentloaded", timeout=60000
+                )
+                try:
+                    page.wait_for_selector(
+                        ".price-card p.price span:nth-child(2)",
+                        state="attached", timeout=45000,
+                    )
+                except PlaywrightTimeout as exc:
+                    status = response.status if response is not None else "unknown"
+                    raise ScrapeError(
+                        "Virši: Chromium did not reach the fuel-price cards "
+                        f"(initial HTTP {status}; page title: {page.title()!r}). "
+                        "The browser fallback has not cleared the source response."
+                    ) from exc
+                return page.content()
+            finally:
+                browser.close()
+
+    def _fetch_price_html(self) -> str:
+        try:
+            html = fetch_html(self.source_url, session=self.session)
+        except requests.HTTPError as exc:
+            if exc.response is None or exc.response.status_code not in {403, 429, 503}:
+                raise
+            logging.warning(
+                "Virši: HTTP %s from the HTTP client; trying Chromium",
+                exc.response.status_code,
+            )
+            return self._fetch_rendered_html()
+
+        if not soupify(html).select(".price-card"):
+            logging.warning("Virši: HTTP response has no price cards; trying Chromium")
+            return self._fetch_rendered_html()
+        return html
  
     def scrape(self, timestamp: str) -> Iterable[FuelRecord]:
-        html = fetch_html(self.source_url, session=self.session)
+        html = self._fetch_price_html()
         soup = soupify(html)
         records: List[FuelRecord] = []
         for card in soup.select(".price-card"):
