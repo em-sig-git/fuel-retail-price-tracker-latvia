@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import logging
+import os
+from collections.abc import Iterable
 
 import pandas as pd
 import requests
@@ -10,6 +12,24 @@ from .scrapers.latvia import LATVIA_SCRAPERS
 from .storage import merge_and_save
 from .utils import ScrapeError, as_dataframe, setup_logging, timestamp_now_iso
 from .validation import validate_brand_records
+
+
+NOTIFY_BRANDS = frozenset({"Circle K", "Viada", "Virši"})
+
+
+def report_missing_brands(successful_brands: Iterable[str]) -> list[str]:
+    missing_brands = sorted(NOTIFY_BRANDS.difference(successful_brands))
+    output_path = os.environ.get("GITHUB_OUTPUT")
+    if output_path:
+        with open(output_path, "a", encoding="utf-8") as output:
+            output.write(f"missing_brands={', '.join(missing_brands)}\n")
+    if missing_brands and os.environ.get("GITHUB_ACTIONS") == "true":
+        print(
+            "::warning title=Missing fuel price data::"
+            f"No valid records for: {', '.join(missing_brands)}",
+            flush=True,
+        )
+    return missing_brands
 
 
 def run() -> int:
@@ -36,6 +56,8 @@ def run() -> int:
         except Exception as exc:
             logging.exception("%s failed: %s", scraper.brand, exc)
             failed_brands.append(scraper.brand)
+
+    report_missing_brands(successful_brands)
 
     df_new = as_dataframe(all_rows)
     if df_new.empty:
