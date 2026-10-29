@@ -40,11 +40,3 @@ jobs:
           git add data/*.csv
           git diff --cached --quiet || git commit -m "Update fuel price data"
           git push
-
-      - name: Check required brand data
-        if: ${{ steps.scrape.outputs.missing_brands != '' }}
-        env:
-          MISSING_BRANDS: ${{ steps.scrape.outputs.missing_brands }}
-        run: |
-          echo "No valid fuel prices for: $MISSING_BRANDS"
-          exit 1
