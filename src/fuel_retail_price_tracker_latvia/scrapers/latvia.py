@@ -4,7 +4,7 @@ import logging
 from typing import Iterable, List
  
 import requests
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Tag
  
 from ..models import FuelRecord
 from ..utils import (
@@ -132,6 +132,17 @@ class VirsiScraper(BaseBrandScraper):
 class ViadaScraper(BaseBrandScraper):
     brand = "Viada"
     source_url = "https://www.viada.lv/zemakas-degvielas-cenas/"
+    # Keep the historical CSV codes and record the current label separately.
+    fuel_label_map = {
+        "95 multi fx": "Ecto-95",
+        "95 multi fx plus": "Ecto-95+",
+        "95 multi fx +": "Ecto-95+",
+        "98 multi fx": "E98",
+        "d": "DD",
+        "d multi fx": "Ecto-DD",
+        "gāze": "LPG",
+        "e85": "E85",
+    }
     fuel_map = {
         "petrol_95ecto_new.png": "Ecto-95",
         "petrol_95ectoplus_new.png": "Ecto-95+",
@@ -145,6 +156,10 @@ class ViadaScraper(BaseBrandScraper):
     def scrape(self, timestamp: str) -> Iterable[FuelRecord]:
         html = fetch_html(self.source_url, session=self.session)
         soup = soupify(html)
+        new_rows = soup.select(".fuel-table > .fuel-table__row")
+        if new_rows:
+            return list(self._parse_fuel_table(new_rows, timestamp))
+
         records: List[FuelRecord] = []
         for row in soup.select("table tr"):
             cells = row.select("td")
@@ -177,6 +192,43 @@ class ViadaScraper(BaseBrandScraper):
                 )
             )
         return records
+
+    def _parse_fuel_table(self, rows: Iterable[Tag], timestamp: str) -> Iterable[FuelRecord]:
+        for row in rows:
+            label = row.select_one(".fuel-table__fuel > span")
+            raw_name = clean_text(label.get_text(" ", strip=True)) if label else ""
+            fuel_code = self.fuel_label_map.get(raw_name.casefold())
+            if not fuel_code:
+                logging.warning("Viada: unrecognized fuel label %r", raw_name)
+                continue
+
+            price_tag = row.select_one(".fuel-table__price")
+            price_text = price_tag.get_text(" ", strip=True) if price_tag else ""
+            price = extract_first_decimal(price_text)
+            stations = []
+            for station in row.select(".fuel-table__stations > li"):
+                name_tag = station.select_one(".fuel-table__station")
+                address_tag = station.select_one(".fuel-table__address")
+                name = clean_text(name_tag.get_text(" ", strip=True)) if name_tag else ""
+                address_text = address_tag.get_text(" ", strip=True) if address_tag else ""
+                address = normalize_address(address_text)
+                if not name or not address:
+                    raise ScrapeError(f"Viada: incomplete station for {raw_name}")
+                stations.append(f"{name} : {address}")
+            if price is None or not stations:
+                raise ScrapeError(f"Viada: missing price or stations for {raw_name}")
+
+            yield FuelRecord(
+                timestamp=timestamp,
+                country=self.country,
+                brand=self.brand,
+                fuel_code=fuel_code,
+                fuel_name_raw=raw_name,
+                price_eur_l=price,
+                dus_address=", ".join(stations),
+                source_url=self.source_url,
+                note="Multiple DUS may share one price row",
+            )
  
  
 class LatvijasNaftaScraper(BaseBrandScraper):
