@@ -1,5 +1,6 @@
 from __future__ import annotations
  
+import json
 import logging
 from typing import Iterable, List
  
@@ -132,6 +133,7 @@ class VirsiScraper(BaseBrandScraper):
 class ViadaScraper(BaseBrandScraper):
     brand = "Viada"
     source_url = "https://www.viada.lv/zemakas-degvielas-cenas/"
+    api_url = "https://www.viada.lv/wp-json/wp/v2/pages/8830"
     # Keep the historical CSV codes and record the current label separately.
     fuel_label_map = {
         "95 multi fx": "Ecto-95",
@@ -154,11 +156,44 @@ class ViadaScraper(BaseBrandScraper):
     }
  
     def scrape(self, timestamp: str) -> Iterable[FuelRecord]:
-        html = fetch_html(self.source_url, session=self.session)
+        try:
+            html = fetch_html(self.source_url, session=self.session)
+            records = self._parse_html(html, timestamp, self.source_url)
+            if records:
+                return records
+            title_tag = soupify(html).title
+            title = clean_text(title_tag.get_text())[:120] if title_tag else "(no title)"
+            raise ScrapeError(f"Viada price page has no recognized rows; title={title!r}")
+        except (requests.RequestException, ScrapeError) as exc:
+            primary_error = str(exc)
+            logging.warning("Viada price page failed: %s; trying official page API", exc)
+
+        try:
+            payload = json.loads(fetch_html(self.api_url, session=self.session))
+            if not isinstance(payload, dict) or (
+                payload.get("id") != 8830
+                or payload.get("link") != self.source_url
+                or payload.get("slug") != "zemakas-degvielas-cenas"
+            ):
+                raise ScrapeError("Viada API did not return the official Latvian price page")
+            content = payload.get("content")
+            html = content.get("rendered") if isinstance(content, dict) else None
+            if not isinstance(html, str) or not html.strip():
+                raise ScrapeError("Viada API returned no rendered price content")
+            records = self._parse_html(html, timestamp, self.api_url)
+            validate_brand_records(self.brand, [record.to_dict() for record in records])
+            logging.info("Viada: collected %s price rows from official page API", len(records))
+            return records
+        except (requests.RequestException, ValueError, ScrapeError) as exc:
+            raise ScrapeError(
+                f"Viada price page failed ({primary_error}); official page API failed ({exc})"
+            ) from exc
+
+    def _parse_html(self, html: str, timestamp: str, source_url: str) -> List[FuelRecord]:
         soup = soupify(html)
         new_rows = soup.select(".fuel-table > .fuel-table__row")
         if new_rows:
-            return list(self._parse_fuel_table(new_rows, timestamp))
+            return list(self._parse_fuel_table(new_rows, timestamp, source_url))
 
         records: List[FuelRecord] = []
         for row in soup.select("table tr"):
@@ -187,13 +222,15 @@ class ViadaScraper(BaseBrandScraper):
                     fuel_name_raw=raw_name,
                     price_eur_l=price,
                     dus_address=address,
-                    source_url=self.source_url,
+                    source_url=source_url,
                     note="Multiple DUS may share one price row",
                 )
             )
         return records
 
-    def _parse_fuel_table(self, rows: Iterable[Tag], timestamp: str) -> Iterable[FuelRecord]:
+    def _parse_fuel_table(
+        self, rows: Iterable[Tag], timestamp: str, source_url: str
+    ) -> Iterable[FuelRecord]:
         for row in rows:
             label = row.select_one(".fuel-table__fuel > span")
             raw_name = clean_text(label.get_text(" ", strip=True)) if label else ""
@@ -226,7 +263,7 @@ class ViadaScraper(BaseBrandScraper):
                 fuel_name_raw=raw_name,
                 price_eur_l=price,
                 dus_address=", ".join(stations),
-                source_url=self.source_url,
+                source_url=source_url,
                 note="Multiple DUS may share one price row",
             )
  
