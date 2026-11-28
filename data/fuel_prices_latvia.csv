@@ -1,4 +1,13 @@
 ﻿timestamp;country;brand;fuel_code;fuel_name_raw;price_eur_l;dus_address;source_url;note
+2026-11-28T15:03+02:00;LV;Circle K;DD;Dmiles;1.814;Brīvības gatve 203, Kurbada iela 8, Tvaika iela 2A;https://www.circlek.lv/degviela-miles/degvielas-cenas;
+2026-11-28T15:03+02:00;LV;Circle K;DD+;Dmiles+;1.944;Brīvības gatve 203, Kurbada iela 8, Tvaika iela 2A;https://www.circlek.lv/degviela-miles/degvielas-cenas;
+2026-11-28T15:03+02:00;LV;Circle K;E95;95miles;1.614;Brīvības gatve 203, Kurbada iela 8, Tvaika iela 2A;https://www.circlek.lv/degviela-miles/degvielas-cenas;
+2026-11-28T15:03+02:00;LV;Circle K;E98;98miles+;1.684;Brīvības gatve 203, Kurbada iela 8, Tvaika iela 2A;https://www.circlek.lv/degviela-miles/degvielas-cenas;
+2026-11-28T15:03+02:00;LV;Circle K;LPG;Autogāze;1.118;Augusta Deglava iela 164C, Kārļa Ulmaņa gatve 117;https://www.circlek.lv/degviela-miles/degvielas-cenas;
+2026-11-28T15:03+02:00;LV;Virši;DD;DD;1.887;Brīvības gatve 297, Rīga, LV-1006;https://www.virsi.lv/lv/privatpersonam/degviela/degvielas-un-elektrouzlades-cenas;
+2026-11-28T15:03+02:00;LV;Virši;E95;95E;1.687;Brīvības gatve 297, Rīga, LV-1006;https://www.virsi.lv/lv/privatpersonam/degviela/degvielas-un-elektrouzlades-cenas;
+2026-11-28T15:03+02:00;LV;Virši;E98;98E;1.757;Brīvības gatve 297, Rīga, LV-1006;https://www.virsi.lv/lv/privatpersonam/degviela/degvielas-un-elektrouzlades-cenas;
+2026-11-28T15:03+02:00;LV;Virši;LPG;LPG;1.105;Visā Viršu tīklā;https://www.virsi.lv/lv/privatpersonam/degviela/degvielas-un-elektrouzlades-cenas;
 2026-11-28T11:56+02:00;LV;Circle K;DD;Dmiles;1.814;Brīvības gatve 203, Kurbada iela 8, Tvaika iela 2A;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-11-28T11:56+02:00;LV;Circle K;DD+;Dmiles+;1.944;Brīvības gatve 203, Kurbada iela 8, Tvaika iela 2A;https://www.circlek.lv/degviela-miles/degvielas-cenas;
 2026-11-28T11:56+02:00;LV;Circle K;E95;95miles;1.614;Brīvības gatve 203, Kurbada iela 8, Tvaika iela 2A;https://www.circlek.lv/degviela-miles/degvielas-cenas;
